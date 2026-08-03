@@ -5,6 +5,7 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { useReveal } from '@/hooks/useReveal'
 import { SALARY_TIERS } from '@/data/skillsprint'
 import styles from './Salary.module.css'
+import { asset } from '@/lib/asset'
 
 export function Salary() {
   const grid = useReveal<HTMLDivElement>()
@@ -39,7 +40,7 @@ export function Salary() {
 
           <div className={styles.noteBody}>
             <div className={styles.noteRow}>
-              <img src="/assets/ss/info.png" alt="" className={styles.infoIcon} />
+              <img src={asset('/assets/ss/info.png')} alt="" className={styles.infoIcon} />
               <p className={styles.noteText}>
                 Цей карʼєрний шлях є <strong>орієнтовним</strong> і може змінюватись
                 залежно від ваших <strong>темпів розвитку.</strong>

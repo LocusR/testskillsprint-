@@ -4,6 +4,7 @@ import { Reveal } from '@/components/ui/Reveal'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { VideoCard } from '@/components/ui/VideoCard'
 import styles from './AboutCourse.module.css'
+import { asset } from '@/lib/asset'
 
 export function AboutCourse() {
   return (
@@ -19,7 +20,7 @@ export function AboutCourse() {
         <div className={styles.grid}>
           <Reveal variant="fade">
             <VideoCard
-              src="/assets/ss/video-1.png"
+              src={asset('/assets/ss/video-1.png')}
               alt="Про курс SkillSprint"
               radius="md"
             />

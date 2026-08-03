@@ -3,6 +3,7 @@ import { InstagramIcon, LinkedInIcon } from '@/components/icons'
 import { useApplicationModal } from '@/context/ApplicationModalContext'
 import { EXTERNAL, FOOTER_LINKS, ROUTES, type NavLink } from '@/config/site'
 import styles from './Footer.module.css'
+import { asset } from '@/lib/asset'
 
 type Props = {
   /** SkillSprint має власний логотип у футері. */
@@ -55,8 +56,8 @@ export function Footer({ logo = 'bes', logoHref = ROUTES.skillSprint }: Props) {
           <img
             src={
               logo === 'skillsprint'
-                ? '/assets/ss/logo-ss-footer.png'
-                : '/assets/logo-footer.png'
+                ? asset('/assets/ss/logo-ss-footer.png')
+                : asset('/assets/logo-footer.png')
             }
             alt={logo === 'skillsprint' ? 'SkillSprint' : 'BES'}
             className={styles.logo}

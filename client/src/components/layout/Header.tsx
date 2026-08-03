@@ -5,6 +5,7 @@ import { BurgerIcon, CloseIcon, InstagramIcon, LinkedInIcon } from '@/components
 import { useApplicationModal } from '@/context/ApplicationModalContext'
 import { EXTERNAL, NAV_LINKS, ROUTES, type NavLink } from '@/config/site'
 import styles from './Header.module.css'
+import { asset } from '@/lib/asset'
 
 type Props = {
   /** Логотип відрізняється між сторінками: SkillSprint/Blog — logo-bes, лендінг BES — logo-bes-teal. */
@@ -113,7 +114,7 @@ export function Header({ logo = 'bes', logoHref = ROUTES.skillSprint }: Props) {
     <header className={styles.header}>
       <Link to={logoHref} className={styles.logoLink}>
         <img
-          src={logo === 'bes-teal' ? '/assets/logo-bes-teal.png' : '/assets/logo-bes.png'}
+          src={logo === 'bes-teal' ? asset('/assets/logo-bes-teal.png') : asset('/assets/logo-bes.png')}
           alt="BES"
           className={logo === 'bes-teal' ? styles.logoTeal : styles.logo}
         />

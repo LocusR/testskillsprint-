@@ -6,13 +6,14 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { useApplicationModal } from '@/context/ApplicationModalContext'
 import { METRICS } from '@/data/skillsprint'
 import styles from './Pride.module.css'
+import { asset } from '@/lib/asset'
 
 export function Pride() {
   const { open } = useApplicationModal()
 
   return (
     <Panel tone="teal">
-      <img src="/assets/logo-footer.png" alt="BES" className={styles.logo} />
+      <img src={asset('/assets/logo-footer.png')} alt="BES" className={styles.logo} />
 
       <div className={styles.head}>
         <SectionHeading tone="white">
@@ -29,7 +30,7 @@ export function Pride() {
 
       <Reveal variant="fade" className={styles.clientsWrap}>
         <img
-          src="/assets/ss/clients.png"
+          src={asset('/assets/ss/clients.png')}
           alt="Клієнти BES"
           loading="lazy"
           className={styles.clients}

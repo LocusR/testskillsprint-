@@ -6,6 +6,7 @@ import { VideoCard } from '@/components/ui/VideoCard'
 import { useReveal } from '@/hooks/useReveal'
 import { COURSE_MODULES } from '@/data/skillsprint'
 import styles from './Program.module.css'
+import { asset } from '@/lib/asset'
 
 export function Program() {
   const modules = useReveal<HTMLDivElement>()
@@ -45,11 +46,11 @@ export function Program() {
 
         <div className={styles.showcase}>
           <Reveal variant="fade" className={styles.showcaseCell}>
-            <VideoCard src="/assets/ss/video-2.png" alt="Роботи випускників" fill />
+            <VideoCard src={asset('/assets/ss/video-2.png')} alt="Роботи випускників" fill />
           </Reveal>
           <Reveal variant="rise" delay={1} className={styles.payCard}>
             <span className={styles.payTile}>
-              <img src="/assets/ss/pay.png" alt="" loading="lazy" className={styles.payImg} />
+              <img src={asset('/assets/ss/pay.png')} alt="" loading="lazy" className={styles.payImg} />
             </span>
             <p className={styles.payTitle}>
               Отримуй оплату після успішного завершення кожного модуля

@@ -1,5 +1,6 @@
 import fm from 'front-matter'
 import { Marked } from 'marked'
+import { asset } from '@/lib/asset'
 
 /**
  * Блог на Markdown-файлах.
@@ -51,10 +52,13 @@ const marked = new Marked({
   renderer: {
     image({ href, title, text }) {
       const alt = text ?? ''
+      // Шляхи в markdown теж абсолютні ('/assets/art-1.png'), тож на підшляху
+      // GitHub Pages їх треба префіксувати так само, як і в коді.
+      const src = href?.startsWith('/') ? asset(href) : href
       if (title === 'video') {
-        return `<figure class="md-video"><img src="${href}" alt="${alt}" loading="lazy" /><span class="md-video-play" aria-hidden="true"></span></figure>`
+        return `<figure class="md-video"><img src="${src}" alt="${alt}" loading="lazy" /><span class="md-video-play" aria-hidden="true"></span></figure>`
       }
-      return `<img src="${href}" alt="${alt}" loading="lazy" />`
+      return `<img src="${src}" alt="${alt}" loading="lazy" />`
     },
   },
 })
@@ -84,7 +88,7 @@ function parse(path: string, raw: string): BlogPost | null {
     excerpt: attributes.excerpt ?? '',
     cover: attributes.cover ?? '',
     author: attributes.author ?? 'BES',
-    authorAvatar: attributes.authorAvatar ?? '/assets/avatar.png',
+    authorAvatar: attributes.authorAvatar ?? asset('/assets/avatar.png'),
     publishedAt: toISODate(attributes.publishedAt),
     ...(attributes.updatedAt ? { updatedAt: toISODate(attributes.updatedAt) } : {}),
     readingTime: attributes.readingTime ?? '',

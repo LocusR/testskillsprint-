@@ -5,6 +5,7 @@ import { GraduateIcon, TeamIcon } from '@/components/icons'
 import { useApplicationModal } from '@/context/ApplicationModalContext'
 import { useReveal } from '@/hooks/useReveal'
 import styles from './Hero.module.css'
+import { asset } from '@/lib/asset'
 
 export function Hero() {
   const { open } = useApplicationModal()
@@ -89,7 +90,7 @@ export function Hero() {
         <div className={styles.right}>
           <Reveal variant="fade" className={styles.heroImgWrap}>
             <img
-              src="/assets/ss/hero.png"
+              src={asset('/assets/ss/hero.png')}
               alt="Команда SkillSprint"
               className={styles.heroImg}
               fetchPriority="high"
@@ -100,7 +101,7 @@ export function Hero() {
             <p className={styles.darkCardTitle}>
               1000 + учасників вже взяли участь у програмі
             </p>
-            <img src="/assets/ss/avatars.png" alt="" className={styles.avatars} />
+            <img src={asset('/assets/ss/avatars.png')} alt="" className={styles.avatars} />
             <p className={styles.darkCardText}>
               Після успішного проходження курсу — працевлаштування в компанії та
               робота над американськими проєктами.

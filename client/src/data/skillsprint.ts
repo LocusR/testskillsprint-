@@ -1,4 +1,5 @@
 import type { FaqItem } from '@/components/ui/Accordion'
+import { asset } from '@/lib/asset'
 
 /** Кольорові теми карток — відповідають фонам живого bes.in.ua/skillsprint. */
 export type CardTone = 'teal' | 'petrol' | 'dark' | 'orange' | 'white'
@@ -57,19 +58,19 @@ export type SalaryTier = {
  */
 export const BIM_CARDS: IconCard[] = [
   {
-    img: '/assets/ss/bim-1.png',
+    img: asset('/assets/ss/bim-1.png'),
     text: 'Працює в Autodesk Revit, Navisworks та інших програмах',
     tone: 'petrol',
     layout: 'stack',
   },
   {
-    img: '/assets/ss/bim-2.png',
+    img: asset('/assets/ss/bim-2.png'),
     text: 'Моделює інженерні мережі',
     tone: 'petrol',
     layout: 'stack',
   },
   {
-    img: '/assets/ss/bim-3.png',
+    img: asset('/assets/ss/bim-3.png'),
     text: 'Розробляє проєкти на замовлення клієнтів із США',
     tone: 'petrol',
     layout: 'stack',
@@ -79,17 +80,17 @@ export const BIM_CARDS: IconCard[] = [
 /** «Кому підійде курс» */
 export const AUDIENCE_CARDS: IconCard[] = [
   {
-    img: '/assets/ss/aud-1.png',
+    img: asset('/assets/ss/aud-1.png'),
     text: 'Студентам, які хочуть знайти перспективну професію',
     tone: 'teal',
   },
   {
-    img: '/assets/ss/aud-2.png',
+    img: asset('/assets/ss/aud-2.png'),
     text: 'Тим, хто мріє працювати віддалено та отримувати стабільний дохід',
     tone: 'orange',
   },
   {
-    img: '/assets/ss/aud-3.png',
+    img: asset('/assets/ss/aud-3.png'),
     text: 'Людям, які шукають новий напрямок у кар’єрі з можливістю зростання',
     tone: 'dark',
   },
@@ -98,32 +99,32 @@ export const AUDIENCE_CARDS: IconCard[] = [
 /** «Що на тебе чекає?» */
 export const FEATURES: Feature[] = [
   {
-    img: '/assets/ss/f-1.png',
+    img: asset('/assets/ss/f-1.png'),
     title: 'Онлайн навчання',
     text: 'Навчання у зручному форматі: відеоуроки, практичні завдання в Revit і підтримка менторів у чаті на кожному етапі',
   },
   {
-    img: '/assets/ss/f-2.png',
+    img: asset('/assets/ss/f-2.png'),
     title: 'Гнучкий графік',
     text: 'Проходь навчання у зручному часі — плануй свій графік самостійно. Всі уроки, завдання та матеріали доступні онлайн',
   },
   {
-    img: '/assets/ss/f-3.png',
+    img: asset('/assets/ss/f-3.png'),
     title: 'Допомога ментора',
     text: 'Наші ментори завжди поруч. Отримуй фідбек, відповіді на запитання та підтримку, коли вона тобі потрібна',
   },
   {
-    img: '/assets/ss/f-4.png',
+    img: asset('/assets/ss/f-4.png'),
     title: 'Оплата за здані модулі',
     text: 'Час, витрачений студентами на навчання оплачується після кожного успішного завершення модуля',
   },
   {
-    img: '/assets/ss/f-5.png',
+    img: asset('/assets/ss/f-5.png'),
     title: 'Стажування',
     text: 'Після вдалого завершення курсу на тебе чекає двотижневе стажування в топовій компанії BES',
   },
   {
-    img: '/assets/ss/f-6.png',
+    img: asset('/assets/ss/f-6.png'),
     title: 'Працевлаштування',
     text: 'Після проходження стажування ти отримуєш реальний офер на позицію BIM-спеціаліста та приєднаєшся до команди професіоналів',
   },
@@ -135,51 +136,51 @@ export const COURSE_MODULES: CourseModule[] = [
     title: 'Модуль 0:',
     week: 'Тиждень 1',
     text: 'Ознайомлення з інтерфейсом та базові налаштування',
-    img: '/assets/ss/m-0.png',
+    img: asset('/assets/ss/m-0.png'),
     tone: 'white',
   },
   {
     title: 'Модуль 1:',
     week: 'Тиждень 1',
     text: 'Робота з налаштуваннями і деталізацією моделі',
-    img: '/assets/ss/m-1.png',
+    img: asset('/assets/ss/m-1.png'),
     tone: 'petrol',
   },
   {
     title: 'Модуль 2:',
     week: 'Тиждень 2',
     text: 'Робота з налаштуваннями і деталізацією моделі',
-    img: '/assets/ss/m-2.png',
+    img: asset('/assets/ss/m-2.png'),
     tone: 'white',
   },
   {
     title: 'Модуль 3:',
     week: 'Тиждень 3',
     text: 'Узгодження і робота з суміжними дисциплінами',
-    img: '/assets/ss/m-3.png',
+    img: asset('/assets/ss/m-3.png'),
     tone: 'petrol',
   },
   {
     title: 'Модуль 4:',
     week: 'Тиждень 4',
     text: 'Оформлення документації проекту',
-    img: '/assets/ss/m-4.png',
+    img: asset('/assets/ss/m-4.png'),
     tone: 'white',
   },
 ]
 
 export const MENTORS: Mentor[] = [
-  { img: '/assets/ss/mentor-1.png', name: 'Валерій Дунда', role: 'BIM Engineer' },
-  { img: '/assets/ss/mentor-2.png', name: 'Роман Коломоєць', role: 'BIM Specialist' },
-  { img: '/assets/ss/mentor-3.png', name: 'Мирослав Періг', role: 'Team Lead' },
-  { img: '/assets/ss/mentor-4.png', name: 'Софія Ерліх', role: 'Team Lead' },
+  { img: asset('/assets/ss/mentor-1.png'), name: 'Валерій Дунда', role: 'BIM Engineer' },
+  { img: asset('/assets/ss/mentor-2.png'), name: 'Роман Коломоєць', role: 'BIM Specialist' },
+  { img: asset('/assets/ss/mentor-3.png'), name: 'Мирослав Періг', role: 'Team Lead' },
+  { img: asset('/assets/ss/mentor-4.png'), name: 'Софія Ерліх', role: 'Team Lead' },
 ]
 
 export const STORIES: Story[] = [
-  { img: '/assets/ss/story-1.png', name: 'Валід Маді', role: 'BIM-Спеціаліст' },
-  { img: '/assets/ss/story-2.png', name: 'Марія Гоц', role: 'BIM-Спеціалістка' },
-  { img: '/assets/ss/story-3.png', name: 'Катерина Голуб', role: 'BIM-Спеціалістка' },
-  { img: '/assets/ss/story-4.png', name: 'Юрій Затолочний', role: 'BIM-Спеціаліст' },
+  { img: asset('/assets/ss/story-1.png'), name: 'Валід Маді', role: 'BIM-Спеціаліст' },
+  { img: asset('/assets/ss/story-2.png'), name: 'Марія Гоц', role: 'BIM-Спеціалістка' },
+  { img: asset('/assets/ss/story-3.png'), name: 'Катерина Голуб', role: 'BIM-Спеціалістка' },
+  { img: asset('/assets/ss/story-4.png'), name: 'Юрій Затолочний', role: 'BIM-Спеціаліст' },
 ]
 
 export const METRICS: Metric[] = [
@@ -194,21 +195,21 @@ export const SALARY_TIERS: SalaryTier[] = [
     experience: 'досвід 0+',
     amount: '~ $ 600',
     text: 'Це ти після SkillSprint. Володієш базовими знаннями з Revit і BIM та готовий(-а) братись за перші реальні задачі з підтримкою ментора в команді BES.',
-    img: '/assets/ss/pay-1.png',
+    img: asset('/assets/ss/pay-1.png'),
     tone: 'teal',
   },
   {
     experience: 'досвід 6 міс+',
     amount: '~ $ 800',
     text: 'Ти впевнено працюєш у Revit, створюєш креслення, розумієш логіку BIM і береш на себе складніші проєкти та більше обов’язків.',
-    img: '/assets/ss/pay-2.png',
+    img: asset('/assets/ss/pay-2.png'),
     tone: 'light',
   },
   {
     experience: 'досвід 1 рік+',
     amount: '$ 1 000 +',
     text: 'Ти ведеш проєкти, координуєш команду, консультуєш молодших спеціалістів і впевнено працюєш з клієнтами зі США.',
-    img: '/assets/ss/pay-3.png',
+    img: asset('/assets/ss/pay-3.png'),
     tone: 'orange',
   },
 ]

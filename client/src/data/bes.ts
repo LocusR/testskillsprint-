@@ -1,3 +1,4 @@
+import { asset } from '@/lib/asset'
 export type Benefit = {
   img: string
   /** Рядки — переноси з прототипу (<br />). */
@@ -18,12 +19,12 @@ export const ABOUT_METRICS: AboutMetric[] = [
 ]
 
 export const BENEFITS: Benefit[] = [
-  { img: '/assets/benefit-1.png', lines: ['Віддалена робота або', 'робота в офісі'] },
-  { img: '/assets/benefit-2.png', lines: ['Повне технічне', 'забезпечення'] },
-  { img: '/assets/benefit-3.png', lines: ['Оплачувана відпустка', 'та лікарняні'] },
-  { img: '/assets/benefit-4.png', lines: ['Приємні та корисні', 'подарунки на свята'] },
-  { img: '/assets/benefit-5.png', lines: ['Компенсація на', 'дозвілля'] },
-  { img: '/assets/benefit-6.png', lines: ['Бонуси за підвищення', 'рівня англійської'] },
+  { img: asset('/assets/benefit-1.png'), lines: ['Віддалена робота або', 'робота в офісі'] },
+  { img: asset('/assets/benefit-2.png'), lines: ['Повне технічне', 'забезпечення'] },
+  { img: asset('/assets/benefit-3.png'), lines: ['Оплачувана відпустка', 'та лікарняні'] },
+  { img: asset('/assets/benefit-4.png'), lines: ['Приємні та корисні', 'подарунки на свята'] },
+  { img: asset('/assets/benefit-5.png'), lines: ['Компенсація на', 'дозвілля'] },
+  { img: asset('/assets/benefit-6.png'), lines: ['Бонуси за підвищення', 'рівня англійської'] },
 ]
 
 /** Фрагмент тексту: рядок — звичайний, { b } — жирний акцент. */
@@ -31,9 +32,9 @@ export type RichSegment = string | { b: string }
 
 /** Слайди каруселі «Наша команда». */
 export const TEAM_SLIDES: { img: string; alt: string }[] = [
-  { img: '/assets/team-1.png', alt: 'Команда BES в офісі' },
-  { img: '/assets/team-2.png', alt: 'Команда BES на зустрічі' },
-  { img: '/assets/team-3.png', alt: 'Команда BES на заході' },
+  { img: asset('/assets/team-1.png'), alt: 'Команда BES в офісі' },
+  { img: asset('/assets/team-2.png'), alt: 'Команда BES на зустрічі' },
+  { img: asset('/assets/team-3.png'), alt: 'Команда BES на заході' },
 ]
 
 export const TEAM_TEXT: RichSegment[][] = [

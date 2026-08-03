@@ -18,6 +18,7 @@ import {
   TEAM_TEXT,
 } from '@/data/bes'
 import styles from './BesLanding.module.css'
+import { asset } from '@/lib/asset'
 
 type Props = {
   /** Тумблери секцій із <sc-if> прототипу — керуються пропсами. */
@@ -74,7 +75,7 @@ export default function BesLandingPage({
             </div>
           </div>
           <Reveal variant="fade" delay={1}>
-            <VideoCard src="/assets/hero-video.png" alt="BES" radius="md" />
+            <VideoCard src={asset('/assets/hero-video.png')} alt="BES" radius="md" />
           </Reveal>
         </Container>
       </section>
@@ -95,7 +96,7 @@ export default function BesLandingPage({
 
           <Reveal variant="fade">
             <img
-              src="/assets/clients.png"
+              src={asset('/assets/clients.png')}
               alt="Клієнти BES"
               loading="lazy"
               className={styles.clients}
@@ -149,7 +150,7 @@ export default function BesLandingPage({
           </div>
           <Reveal variant="fade" delay={1} className="hover-zoom">
             <img
-              src="/assets/project-1.png"
+              src={asset('/assets/project-1.png')}
               alt="BIM-модель"
               loading="lazy"
               className={styles.projectImg}
@@ -240,7 +241,7 @@ export default function BesLandingPage({
           </div>
 
           <img
-            src="/assets/online-events.png"
+            src={asset('/assets/online-events.png')}
             alt="Онлайн заходи BES"
             loading="lazy"
             className={styles.eventsImg}
@@ -259,7 +260,7 @@ export default function BesLandingPage({
                 середовище, де легко тримати баланс.
               </p>
               <img
-                src="/assets/sport.png"
+                src={asset('/assets/sport.png')}
                 alt="Спорт у BES"
                 loading="lazy"
                 className={styles.eventsSubImg}
@@ -278,7 +279,7 @@ export default function BesLandingPage({
               </p>
               <Link to={ROUTES.skillSprint}>
                 <img
-                  src="/assets/skillsprint.png"
+                  src={asset('/assets/skillsprint.png')}
                   alt="Програма SkillSprint"
                   loading="lazy"
                   className={styles.eventsSubImg}
@@ -293,7 +294,7 @@ export default function BesLandingPage({
       <section className={styles.quote}>
         <div className={styles.quoteInner}>
           <img
-            src="/assets/quote-bg.png"
+            src={asset('/assets/quote-bg.png')}
             alt=""
             loading="lazy"
             className={styles.quoteBg}

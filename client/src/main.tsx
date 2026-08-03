@@ -9,7 +9,12 @@ if (!rootElement) throw new Error('Не знайдено #root у index.html')
 
 createRoot(rootElement).render(
   <StrictMode>
-    <BrowserRouter>
+    {/*
+      basename із BASE_URL: на GitHub Pages сайт лежить у підпапці
+      (/testskillsprint-/), і без нього роутер не зіставив би маршрути.
+      У корені домену BASE_URL дорівнює '/' — поведінка не змінюється.
+    */}
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
     </BrowserRouter>
   </StrictMode>,
