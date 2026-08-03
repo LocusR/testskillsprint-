@@ -1,8 +1,11 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build --workspace client",
+  "outputDirectory": "client/dist",
   "rewrites": [
     {
-      "comment": "SPA-fallback для маршрутів роутера. /api/* навмисно виключено: бекенду на Vercel немає, і якби ці запити теж віддавали index.html з кодом 200, фронтенд вважав би відправку заявки успішною. Без цього правила /api/candidates отримає 404, і форма покаже чесну помилку.",
+      "comment": "SPA-fallback для маршрутів роутера. /api/* навмисно виключено: на Vercel бекенду немає, і якби ці запити теж віддавали index.html з кодом 200, фронтенд вважав би відправку заявки успішною.",
       "source": "/((?!api/).*)",
       "destination": "/index.html"
     }
