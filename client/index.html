@@ -18,6 +18,24 @@
       name="description"
       content="SkillSprint — оплачувана програма від інжинірингової компанії BES, яка готує та працевлаштовує BIM-спеціалістів. 4 тижні навчання + 2 тижні стажування."
     />
+
+    <!--
+      Open Graph: щоб посилання в Telegram, Slack чи листі показувало картку
+      з назвою й зображенням, а не голий URL.
+      og:image лишається відносним, бо домен ще не визначений. Більшість
+      сучасних парсерів це підхоплюють; коли зʼявиться домен — краще
+      замінити на абсолютний, тоді картку побачать усі без винятку.
+    -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:site_name" content="SkillSprint · BES" />
+    <meta property="og:title" content="SkillSprint — Ви навчаєтесь, ми платимо!" />
+    <meta
+      property="og:description"
+      content="Оплачувана програма від інжинірингової компанії BES: 4 тижні навчання, 2 тижні стажування і працевлаштування BIM-спеціалістом."
+    />
+    <meta property="og:image" content="/assets/ss/hero.png" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <div id="root"></div>

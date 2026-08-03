@@ -18,8 +18,10 @@
       ]
     },
     {
+      "comment": "noindex обовʼязковий: без нього Google проіндексує це прев'ю, і копія сайту почне конкурувати з bes.in.ua у пошуку як дубль контенту. Прибрати лише тоді, коли деплой стане справжнім продакшном на своєму домені.",
       "source": "/(.*)",
       "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
