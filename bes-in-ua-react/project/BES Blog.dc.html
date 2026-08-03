@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #e0f1f5; }
+  body { font-family: Manrope, "TT Norms", -apple-system, "Segoe UI", Roboto, sans-serif; color: #2e393f; -webkit-font-smoothing: antialiased; }
+  a { color: #2e393f; text-decoration: none; }
+  a:hover { color: #00c5a7; }
+  img { display: block; }
+</style>
+</helmet>
+
+<div style="background:#e0f1f5; overflow-x:hidden; min-height:100vh">
+
+  <header style="position:sticky; top:0; z-index:50; background:#fff; height:124px; display:flex; align-items:center; padding:0 4vw 0 4.3vw; gap:3vw">
+    <a href="BES Landing.dc.html" style="flex-shrink:0"><img src="assets/logo-bes.png" alt="BES" style="height:96px; width:auto" /></a>
+    <nav style="display:flex; align-items:center; gap:2.2vw; margin-left:auto; font-size:clamp(14px,1.05vw,20px); font-weight:500">
+      <a href="SkillSprint.dc.html">SkillSprint</a>
+      <a href="BES Landing.dc.html">BES</a>
+      <a href="https://t.me/b_eng_s_bot">Заявка на навчання</a>
+      <a href="https://bengs.peopleforce.io/careers">Відкриті вакансії</a>
+      <a href="BES Blog.dc.html" style="color:#00c5a7">Блог</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:18px; margin-left:1.5vw">
+      <a href="https://www.linkedin.com/company/b-eng-s" aria-label="LinkedIn" style="display:block">
+        <svg width="24" height="24" viewBox="0 0 60.77 60.77" fill="#2e393f"><path d="M 54.018 0 C 55.809 0 57.526 0.711 58.792 1.978 C 60.059 3.244 60.77 4.961 60.77 6.752 L 60.77 54.018 C 60.77 55.809 60.059 57.526 58.792 58.792 C 57.526 60.059 55.809 60.77 54.018 60.77 L 6.752 60.77 C 4.961 60.77 3.244 60.059 1.978 58.792 C 0.711 57.526 0 55.809 0 54.018 L 0 6.752 C 0 4.961 0.711 3.244 1.978 1.978 C 3.244 0.711 4.961 0 6.752 0 L 54.018 0 Z M 52.33 52.33 L 52.33 34.436 C 52.33 31.517 51.17 28.718 49.106 26.654 C 47.042 24.59 44.243 23.43 41.324 23.43 C 38.455 23.43 35.112 25.186 33.491 27.819 L 33.491 24.07 L 24.073 24.07 L 24.073 52.33 L 33.491 52.33 L 33.491 35.684 C 33.491 33.086 35.584 30.958 38.185 30.958 C 39.439 30.958 40.641 31.456 41.527 32.342 C 42.414 33.228 42.912 34.431 42.912 35.684 L 42.912 52.33 L 52.33 52.33 Z M 13.099 18.771 C 14.604 18.771 16.046 18.174 17.11 17.11 C 18.174 16.046 18.771 14.604 18.771 13.099 C 18.775 11.591 18.179 10.143 17.116 9.073 C 16.052 8.004 14.608 7.4 13.099 7.395 C 12.35 7.394 11.608 7.541 10.916 7.828 C 10.223 8.114 9.594 8.534 9.064 9.064 C 8.534 9.594 8.114 10.223 7.828 10.916 C 7.541 11.608 7.394 12.35 7.395 13.099 C 7.395 16.238 9.961 18.771 13.099 18.771 Z M 17.793 52.33 L 17.793 24.073 L 8.44 24.073 L 8.44 52.33 L 17.793 52.33 Z" fill-rule="nonzero"/></svg>
+      </a>
+      <a href="https://www.instagram.com/bes.bim.vdc/" aria-label="Instagram" style="display:block">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#2e393f"><path d="M 5.143 0 C 3.779 0 2.471 0.542 1.507 1.506 C 0.542 2.47 0 3.778 0 5.142 L 0 18.857 C 0 20.221 0.542 21.529 1.506 22.494 C 2.471 23.458 3.779 24 5.143 24 L 18.858 24 C 20.222 24 21.53 23.458 22.494 22.493 C 23.458 21.529 24 20.221 24 18.857 L 24 5.142 C 23.999 3.778 23.457 2.471 22.493 1.507 C 21.528 0.543 20.22 0.001 18.857 0.001 L 5.143 0 Z M 20.338 5.15 C 20.338 5.543 20.182 5.919 19.904 6.197 C 19.627 6.475 19.25 6.631 18.857 6.631 C 18.464 6.631 18.087 6.475 17.809 6.197 C 17.532 5.919 17.376 5.543 17.376 5.15 C 17.376 4.757 17.532 4.38 17.809 4.102 C 18.087 3.824 18.464 3.668 18.857 3.668 C 19.25 3.668 19.627 3.824 19.904 4.102 C 20.182 4.38 20.338 4.757 20.338 5.15 Z M 12.003 7.891 C 10.914 7.891 9.869 8.324 9.098 9.094 C 8.328 9.865 7.895 10.91 7.895 11.999 C 7.895 13.089 8.328 14.134 9.098 14.904 C 9.869 15.675 10.914 16.108 12.003 16.108 C 13.093 16.108 14.138 15.675 14.908 14.904 C 15.679 14.134 16.111 13.089 16.111 11.999 C 16.111 10.91 15.679 9.865 14.908 9.094 C 14.138 8.324 13.093 7.891 12.003 7.891 Z M 5.917 11.999 C 5.917 10.386 6.558 8.839 7.699 7.698 C 8.84 6.557 10.387 5.916 12.001 5.916 C 13.614 5.916 15.161 6.557 16.302 7.698 C 17.443 8.839 18.084 10.386 18.084 11.999 C 18.084 13.613 17.443 15.16 16.302 16.301 C 15.161 17.442 13.614 18.083 12.001 18.083 C 10.387 18.083 8.84 17.442 7.699 16.301 C 6.558 15.16 5.917 13.613 5.917 11.999 Z" fill-rule="evenodd"/></svg>
+      </a>
+    </div>
+    <a href="https://t.me/b_eng_s_bot" style="flex-shrink:0; display:grid; place-items:center; width:clamp(150px,10.7vw,205px); height:50px; border-radius:20px; background:#00d4b4; color:#fff; font-size:clamp(15px,1.05vw,20px); font-weight:500" style-hover="background:#00c5a7; color:#fff">Залишити заявку</a>
+  </header>
+
+  <main style="width:min(940px,92vw); margin:0 auto; padding:80px 0 120px; font-family:Inter, sans-serif">
+    <h1 style="margin:0 0 70px; font-size:36px; font-weight:400; line-height:1.2; color:#000">Всі пости</h1>
+
+    <article style="display:flex; flex-direction:column">
+      <a href="BES Article.dc.html" style="display:block"><img src="assets/blog-cover.png" alt="Хто такий BIM-спеціаліст" style="width:100%; height:auto" /></a>
+      <div style="padding:29px 45px 60px">
+        <div style="display:flex; align-items:center; gap:10px">
+          <img src="assets/avatar.png" alt="SkillSprint Team" style="width:32px; height:32px; border-radius:16px" />
+          <div style="display:flex; flex-direction:column; gap:5px">
+            <span style="font-size:12px; line-height:1; color:#000">SkillSprint Team</span>
+            <div style="display:flex; align-items:center; gap:9px; font-size:12px; line-height:1; color:#000">
+              <span>Jul 15</span>
+              <span style="width:2px; height:2px; border-radius:1px; background:#000"></span>
+              <span>3 min read</span>
+            </div>
+          </div>
+        </div>
+        <h2 style="margin:36px 0 16px; font-size:28px; font-weight:400; line-height:1.4; color:#000"><a href="BES Article.dc.html" style="color:#000">Хто такий BIM-спеціаліст: що він робить і як почати кар'єру</a></h2>
+        <p style="margin:0; font-size:15.4px; line-height:24px; color:#000">Ще кілька років тому про професію BIM-спеціаліста за межами будівельної галузі знали небагато. Сьогодні цей напрям дедалі частіше привертає увагу людей, які шукають сучасну технічну професію, можливість працювати віддалено та долучатися до міжнародних проєктів. Проте сама назва все ще викликає багато…</p>
+      </div>
+    </article>
+  </main>
+
+  <footer style="background:#00c5a7; padding:60px 4vw 40px">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; align-items:center; max-width:1800px; margin:0 auto">
+      <a href="BES Landing.dc.html" style="display:block"><img src="assets/logo-footer.png" alt="BES" style="width:min(333px,20vw); height:auto; margin-left:clamp(0px,11vw,227px)" /></a>
+      <div style="display:grid; grid-template-columns:1fr auto; gap:3vw; align-items:center">
+        <div style="display:flex; flex-direction:column; gap:2px; font-size:16px; line-height:1.6">
+          <a href="SkillSprint.dc.html" style="color:#fff">SkillSprint</a>
+          <a href="BES Landing.dc.html" style="color:#fff">BES</a>
+          <a href="https://t.me/b_eng_s_bot" style="color:#fff">Заявка на навчання</a>
+          <a href="https://bengs.peopleforce.io/careers" style="color:#fff">Відкриті вакансії</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:26px; padding-right:clamp(0px,20vw,384px)">
+          <a href="https://www.linkedin.com/company/b-eng-s" aria-label="LinkedIn" style="display:block">
+            <svg width="50" height="50" viewBox="0 0 60.77 60.77" fill="#fff"><path d="M 54.018 0 C 55.809 0 57.526 0.711 58.792 1.978 C 60.059 3.244 60.77 4.961 60.77 6.752 L 60.77 54.018 C 60.77 55.809 60.059 57.526 58.792 58.792 C 57.526 60.059 55.809 60.77 54.018 60.77 L 6.752 60.77 C 4.961 60.77 3.244 60.059 1.978 58.792 C 0.711 57.526 0 55.809 0 54.018 L 0 6.752 C 0 4.961 0.711 3.244 1.978 1.978 C 3.244 0.711 4.961 0 6.752 0 L 54.018 0 Z M 52.33 52.33 L 52.33 34.436 C 52.33 31.517 51.17 28.718 49.106 26.654 C 47.042 24.59 44.243 23.43 41.324 23.43 C 38.455 23.43 35.112 25.186 33.491 27.819 L 33.491 24.07 L 24.073 24.07 L 24.073 52.33 L 33.491 52.33 L 33.491 35.684 C 33.491 33.086 35.584 30.958 38.185 30.958 C 39.439 30.958 40.641 31.456 41.527 32.342 C 42.414 33.228 42.912 34.431 42.912 35.684 L 42.912 52.33 L 52.33 52.33 Z M 13.099 18.771 C 14.604 18.771 16.046 18.174 17.11 17.11 C 18.174 16.046 18.771 14.604 18.771 13.099 C 18.775 11.591 18.179 10.143 17.116 9.073 C 16.052 8.004 14.608 7.4 13.099 7.395 C 12.35 7.394 11.608 7.541 10.916 7.828 C 10.223 8.114 9.594 8.534 9.064 9.064 C 8.534 9.594 8.114 10.223 7.828 10.916 C 7.541 11.608 7.394 12.35 7.395 13.099 C 7.395 16.238 9.961 18.771 13.099 18.771 Z M 17.793 52.33 L 17.793 24.073 L 8.44 24.073 L 8.44 52.33 L 17.793 52.33 Z" fill-rule="nonzero"/></svg>
+          </a>
+          <a href="https://www.instagram.com/bes.team.bim" aria-label="Instagram" style="display:block">
+            <svg width="50" height="50" viewBox="0 0 60.77 60.77" fill="#fff"><path d="M 13.023 0 C 9.57 0 6.259 1.371 3.816 3.813 C 1.374 6.254 0.001 9.565 0 13.018 L 0 47.747 C 0 51.201 1.372 54.513 3.814 56.956 C 6.257 59.398 9.569 60.77 13.023 60.77 L 47.752 60.77 C 51.205 60.769 54.516 59.396 56.957 56.954 C 59.399 54.511 60.77 51.2 60.77 47.747 L 60.77 13.018 C 60.769 9.566 59.397 6.255 56.956 3.814 C 54.515 1.373 51.204 0.001 47.752 0 L 13.023 0 Z M 51.498 13.037 C 51.498 14.032 51.103 14.986 50.399 15.689 C 49.696 16.393 48.742 16.788 47.747 16.788 C 46.752 16.788 45.798 16.393 45.094 15.689 C 44.391 14.986 43.995 14.032 43.995 13.037 C 43.995 12.042 44.391 11.088 45.094 10.384 C 45.798 9.681 46.752 9.285 47.747 9.285 C 48.742 9.285 49.696 9.681 50.399 10.384 C 51.103 11.088 51.498 12.042 51.498 13.037 Z M 30.393 19.979 C 27.634 19.979 24.988 21.075 23.037 23.026 C 21.086 24.977 19.99 27.623 19.99 30.382 C 19.99 33.141 21.086 35.787 23.037 37.738 C 24.988 39.689 27.634 40.785 30.393 40.785 C 33.152 40.785 35.798 39.689 37.749 37.738 C 39.7 35.787 40.796 33.141 40.796 30.382 C 40.796 27.623 39.7 24.977 37.749 23.026 C 35.798 21.075 33.152 19.979 30.393 19.979 Z M 14.984 30.382 C 14.984 28.359 15.382 26.356 16.156 24.487 C 16.93 22.619 18.065 20.92 19.495 19.49 C 20.926 18.06 22.624 16.925 24.493 16.151 C 26.362 15.377 28.365 14.978 30.388 14.978 C 32.411 14.978 34.414 15.377 36.283 16.151 C 38.151 16.925 39.85 18.06 41.28 19.49 C 42.71 20.92 43.845 22.619 44.619 24.487 C 45.393 26.356 45.792 28.359 45.792 30.382 C 45.792 34.468 44.169 38.386 41.28 41.275 C 38.391 44.163 34.473 45.786 30.388 45.786 C 26.302 45.786 22.384 44.163 19.495 41.275 C 16.607 38.386 14.984 34.468 14.984 30.382 Z" fill-rule="evenodd"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; max-width:1800px; margin:60px auto 0; font-size:13.5px; color:#fff">
+      <span></span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw">
+        <span>© 2026 усі права захищені.</span>
+        <a href="https://www.bes.in.ua/privacy-policy" style="color:#fff">Політика конфіденційності</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

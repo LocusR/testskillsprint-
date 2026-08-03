@@ -1,0 +1,28 @@
+.widget {
+  display: flex;
+  justify-content: center;
+  min-height: 78px;
+}
+
+/* Віджет має фіксовані 304px — на вузьких екранах масштабуємо */
+@media (max-width: 380px) {
+  .widget {
+    transform: scale(0.88);
+    transform-origin: center top;
+  }
+}
+
+.notice {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: var(--r-sm);
+  background: rgba(251, 161, 98, 0.14);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--c-dark);
+}
+
+.notice code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+}

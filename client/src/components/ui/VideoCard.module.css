@@ -1,0 +1,75 @@
+.wrap {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.radiusMd {
+  border-radius: var(--r-md);
+}
+.radiusCard {
+  border-radius: var(--r-card);
+}
+
+.fill {
+  height: 100%;
+}
+
+.img,
+.imgFill {
+  transition: transform 0.5s var(--hover-ease);
+}
+
+.img {
+  width: 100%;
+  height: auto;
+}
+
+.imgFill {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a.wrap:hover .img,
+a.wrap:hover .imgFill {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s var(--hover-ease);
+}
+
+a.wrap:hover .overlay {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.play {
+  color: rgba(0, 0, 0, 0.78);
+  transition: transform var(--transition), color var(--transition);
+}
+
+a.wrap:hover .play {
+  transform: scale(1.08);
+  color: rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 640px) {
+  .play {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.wrap:hover .img,
+  a.wrap:hover .imgFill,
+  a.wrap:hover .play {
+    transform: none;
+  }
+}

@@ -1,0 +1,31 @@
+.intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3vw;
+  align-items: start;
+}
+
+.introText {
+  font-size: var(--fs-body);
+  line-height: 1.3;
+  color: var(--c-dark);
+}
+
+.cards {
+  margin-top: var(--sp-block);
+}
+
+.secondTitle {
+  margin: clamp(36px, 3.6vw, 70px) 0 var(--sp-block);
+}
+
+@media (max-width: 768px) {
+  .intro {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .secondTitle {
+    margin: 36px 0 18px;
+  }
+}

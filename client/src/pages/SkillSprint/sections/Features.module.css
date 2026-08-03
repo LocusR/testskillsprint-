@@ -1,0 +1,51 @@
+.title {
+  margin-bottom: var(--sp-block);
+}
+
+.card {
+  border-radius: var(--r-card);
+  padding: var(--sp-card);
+}
+
+.dark {
+  background: var(--c-dark);
+  color: var(--c-white);
+}
+
+.light {
+  background: var(--c-bg);
+  color: var(--c-dark);
+}
+
+/* Іконка сидить у білій плитці зі скругленням */
+.iconTile {
+  display: grid;
+  place-items: center;
+  width: clamp(44px, 3.6vw, 68px);
+  height: clamp(44px, 3.6vw, 68px);
+  background: var(--c-white);
+  border-radius: 12px;
+}
+
+.icon {
+  width: 72%;
+  height: auto;
+}
+
+.cardTitle {
+  margin: var(--sp-gap) 0 8px;
+  font-size: var(--fs-card-title);
+  font-weight: 700;
+  color: inherit;
+}
+
+.cardText {
+  font-size: var(--fs-small);
+  line-height: 1.3;
+  color: inherit;
+  opacity: 0.85;
+}
+
+.cta {
+  margin-top: var(--sp-block);
+}

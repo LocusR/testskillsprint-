@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #e0f1f5; }
+  body { font-family: Manrope, "TT Norms", -apple-system, "Segoe UI", Roboto, sans-serif; color: #2e393f; -webkit-font-smoothing: antialiased; }
+  a { color: #2e393f; text-decoration: none; }
+  a:hover { color: #00c5a7; }
+  img { display: block; }
+</style>
+</helmet>
+
+<div style="background:#e0f1f5; overflow-x:hidden">
+
+  <header style="position:sticky; top:0; z-index:50; background:#fff; height:124px; display:flex; align-items:center; padding:0 4vw 0 4.3vw; gap:3vw">
+    <a href="https://www.bes.in.ua" style="flex-shrink:0"><img src="assets/logo-bes-teal.png" alt="BES" style="width:220px; height:auto" /></a>
+    <nav style="display:flex; align-items:center; gap:2.2vw; margin-left:auto; font-size:clamp(14px,1.05vw,20px); font-weight:500">
+      <a href="SkillSprint.dc.html">SkillSprint</a>
+      <a href="https://www.bes.in.ua">BES</a>
+      <a href="https://t.me/b_eng_s_bot">Заявка на навчання</a>
+      <a href="https://bengs.peopleforce.io/careers">Відкриті вакансії</a>
+      <a href="BES Blog.dc.html">Блог</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:18px; margin-left:1.5vw">
+      <a href="https://www.linkedin.com/company/b-eng-s" aria-label="LinkedIn" style="display:block">
+        <svg width="24" height="24" viewBox="0 0 60.77 60.77" fill="#2e393f"><path d="M 54.018 0 C 55.809 0 57.526 0.711 58.792 1.978 C 60.059 3.244 60.77 4.961 60.77 6.752 L 60.77 54.018 C 60.77 55.809 60.059 57.526 58.792 58.792 C 57.526 60.059 55.809 60.77 54.018 60.77 L 6.752 60.77 C 4.961 60.77 3.244 60.059 1.978 58.792 C 0.711 57.526 0 55.809 0 54.018 L 0 6.752 C 0 4.961 0.711 3.244 1.978 1.978 C 3.244 0.711 4.961 0 6.752 0 L 54.018 0 Z M 52.33 52.33 L 52.33 34.436 C 52.33 31.517 51.17 28.718 49.106 26.654 C 47.042 24.59 44.243 23.43 41.324 23.43 C 38.455 23.43 35.112 25.186 33.491 27.819 L 33.491 24.07 L 24.073 24.07 L 24.073 52.33 L 33.491 52.33 L 33.491 35.684 C 33.491 33.086 35.584 30.958 38.185 30.958 C 39.439 30.958 40.641 31.456 41.527 32.342 C 42.414 33.228 42.912 34.431 42.912 35.684 L 42.912 52.33 L 52.33 52.33 Z M 13.099 18.771 C 14.604 18.771 16.046 18.174 17.11 17.11 C 18.174 16.046 18.771 14.604 18.771 13.099 C 18.775 11.591 18.179 10.143 17.116 9.073 C 16.052 8.004 14.608 7.4 13.099 7.395 C 12.35 7.394 11.608 7.541 10.916 7.828 C 10.223 8.114 9.594 8.534 9.064 9.064 C 8.534 9.594 8.114 10.223 7.828 10.916 C 7.541 11.608 7.394 12.35 7.395 13.099 C 7.395 16.238 9.961 18.771 13.099 18.771 Z M 17.793 52.33 L 17.793 24.073 L 8.44 24.073 L 8.44 52.33 L 17.793 52.33 Z" fill-rule="nonzero"/></svg>
+      </a>
+      <a href="https://www.instagram.com/bes.bim.vdc/" aria-label="Instagram" style="display:block">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="#2e393f"><path d="M 5.143 0 C 3.779 0 2.471 0.542 1.507 1.506 C 0.542 2.47 0 3.778 0 5.142 L 0 18.857 C 0 20.221 0.542 21.529 1.506 22.494 C 2.471 23.458 3.779 24 5.143 24 L 18.858 24 C 20.222 24 21.53 23.458 22.494 22.493 C 23.458 21.529 24 20.221 24 18.857 L 24 5.142 C 23.999 3.778 23.457 2.471 22.493 1.507 C 21.528 0.543 20.22 0.001 18.857 0.001 L 5.143 0 Z M 20.338 5.15 C 20.338 5.543 20.182 5.919 19.904 6.197 C 19.627 6.475 19.25 6.631 18.857 6.631 C 18.464 6.631 18.087 6.475 17.809 6.197 C 17.532 5.919 17.376 5.543 17.376 5.15 C 17.376 4.757 17.532 4.38 17.809 4.102 C 18.087 3.824 18.464 3.668 18.857 3.668 C 19.25 3.668 19.627 3.824 19.904 4.102 C 20.182 4.38 20.338 4.757 20.338 5.15 Z M 12.003 7.891 C 10.914 7.891 9.869 8.324 9.098 9.094 C 8.328 9.865 7.895 10.91 7.895 11.999 C 7.895 13.089 8.328 14.134 9.098 14.904 C 9.869 15.675 10.914 16.108 12.003 16.108 C 13.093 16.108 14.138 15.675 14.908 14.904 C 15.679 14.134 16.111 13.089 16.111 11.999 C 16.111 10.91 15.679 9.865 14.908 9.094 C 14.138 8.324 13.093 7.891 12.003 7.891 Z M 5.917 11.999 C 5.917 10.386 6.558 8.839 7.699 7.698 C 8.84 6.557 10.387 5.916 12.001 5.916 C 13.614 5.916 15.161 6.557 16.302 7.698 C 17.443 8.839 18.084 10.386 18.084 11.999 C 18.084 13.613 17.443 15.16 16.302 16.301 C 15.161 17.442 13.614 18.083 12.001 18.083 C 10.387 18.083 8.84 17.442 7.699 16.301 C 6.558 15.16 5.917 13.613 5.917 11.999 Z" fill-rule="evenodd"/></svg>
+      </a>
+    </div>
+    <a href="https://t.me/b_eng_s_bot" style="flex-shrink:0; display:grid; place-items:center; width:clamp(150px,10.7vw,205px); height:50px; border-radius:20px; background:#00d4b4; color:#fff; font-size:clamp(15px,1.05vw,20px); font-weight:500" style-hover="background:#00c5a7; color:#fff">Залишити заявку</a>
+  </header>
+
+  <section style="padding:60px 0 90px">
+    <div style="width:min(1782px,92.8vw); margin:0 auto; display:grid; grid-template-columns:minmax(0,860px) minmax(0,939px); gap:2.5vw; align-items:center">
+      <div>
+        <h1 style="margin:0; font-size:clamp(30px,2.9vw,55.6px); line-height:1.0; font-weight:700; color:#2e393f">BES — це 1000+ інженерів,<br />що працюють на міжнародних<br />проєктах. Стань одним із нас.</h1>
+        <p style="margin:34px 0 44px; font-size:clamp(19px,1.74vw,33.4px); font-weight:400; line-height:1.3; color:#2e393f">Обери свій початок кар'єри в BES</p>
+        <div style="display:flex; flex-direction:column; gap:22px; max-width:459px">
+          <a href="https://bengs.peopleforce.io/careers" style="display:grid; place-items:center; height:50px; border-radius:20px; background:#00d4b4; color:#fff; font-size:clamp(16px,1.05vw,20px); font-weight:500" style-hover="background:#00c5a7; color:#fff">Маю досвід</a>
+          <a href="https://www.bes.in.ua/skillsprint" style="display:grid; place-items:center; height:50px; border-radius:20px; background:#2e393f; color:#fff; font-size:clamp(16px,1.05vw,20px); font-weight:500" style-hover="background:#1f272b; color:#fff">Немає досвіду</a>
+        </div>
+      </div>
+      <div style="position:relative; border-radius:15px; overflow:hidden">
+        <img src="assets/hero-video.png" alt="BES" style="width:100%; height:auto" />
+        <div style="position:absolute; inset:0; display:grid; place-items:center">
+          <svg width="60" height="60" viewBox="0 0 45.366 45.366" fill="rgba(0,0,0,.78)"><path d="M 22.683 0 C 10.155 0 0 10.155 0 22.683 C 0 35.21 10.155 45.366 22.683 45.366 C 35.21 45.366 45.366 35.21 45.366 22.683 C 45.366 10.155 35.21 0 22.683 0 Z M 24.152 25.806 L 18.642 28.929 L 18.642 16.438 L 24.152 19.561 L 29.663 22.683 L 24.152 25.806 Z" fill-rule="nonzero"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="width:100%; background:#fff; border-radius:42px; padding:80px 0 100px">
+    <div style="width:min(1782px,92.8vw); margin:0 auto">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; align-items:start; margin-bottom:56px">
+        <h2 style="margin:0; font-size:clamp(30px,2.89vw,55.5px); font-weight:700; line-height:1.3; color:#2e393f">Про нас</h2>
+        <p style="margin:0; font-size:clamp(15px,1.39vw,26.7px); line-height:1.25; color:#2e393f">BES – українська інжинірингова компанія.<br />За 5 років вона виросла з 8 до 1000+ співробітників<br />та реалізувала понад 300 проєктів.</p>
+      </div>
+      <img src="assets/clients.png" alt="Клієнти BES" style="width:100%; height:auto" />
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; margin:56px 0 70px">
+        <p style="margin:0; font-size:clamp(15px,1.39vw,26.7px); line-height:1.25; color:#2e393f">Серед клієнтів провідні світові бренди BES спеціалізується на проєктуванні електричних систем для промислових об'єктів, медичних та освітніх закладів тощо.</p>
+        <p style="margin:0; font-size:clamp(15px,1.39vw,26.7px); line-height:1.25; color:#2e393f">Ми спеціалізуємося на BIM-проєктуванні електричних систем та створюємо інформаційні моделі для дата-центрів, заводів, медичних і навчальних закладів.</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; max-width:1455px">
+        <div style="border-radius:23px; background:#2e393f; padding:clamp(22px,2.2vw,42px) clamp(18px,1.7vw,33px) clamp(24px,2vw,38px)">
+          <div style="font-size:clamp(48px,6.5vw,124.8px); font-weight:500; line-height:1; color:#fff">1000+</div>
+          <div style="margin-top:18px; font-size:clamp(15px,1.73vw,33.3px); font-weight:400; color:#fff">BIM - інженерів</div>
+        </div>
+        <div style="border-radius:23px; background:#00c5a7; padding:clamp(22px,2.2vw,42px) clamp(18px,1.7vw,33px) clamp(24px,2vw,38px)">
+          <div style="font-size:clamp(48px,6.5vw,124.8px); font-weight:500; line-height:1; color:#fff">300+</div>
+          <div style="margin-top:18px; font-size:clamp(15px,1.73vw,33.3px); font-weight:400; color:#fff">проєктів</div>
+        </div>
+        <div style="border-radius:23px; background:#fba162; padding:clamp(22px,2.2vw,42px) clamp(18px,1.7vw,33px) clamp(24px,2vw,38px)">
+          <div style="font-size:clamp(48px,6.5vw,124.8px); font-weight:500; line-height:1; color:#fff">50+</div>
+          <div style="margin-top:18px; font-size:clamp(15px,1.73vw,33.3px); font-weight:400; color:#fff">клієнтів</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:100px 0">
+    <div style="width:min(1782px,92.8vw); margin:0 auto; display:grid; grid-template-columns:minmax(0,42%) minmax(0,58%); gap:3vw; align-items:start">
+      <div>
+        <h2 style="margin:0 0 44px; font-size:clamp(30px,2.89vw,55.5px); font-weight:700; line-height:1.3; color:#2e393f">Наші проєкти</h2>
+        <p style="margin:0; font-size:clamp(15px,1.39vw,26.7px); line-height:1.25; color:#2e393f">BES створює BIM-моделі електричних систем для дата-центрів, заводів, логістичних хабів і комерційних об'єктів, співпрацюючи зі світовими брендами та американськими девелоперами.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px">
+        <img src="assets/project-1.png" alt="BIM-модель" style="width:100%; height:auto; border-radius:12px" />
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showTeam }}" hint-placeholder-val="{{ true }}">
+  <section style="width:100%; background:#00c5a7; border-radius:42px; padding:90px 0 100px">
+    <div style="width:min(1782px,92.8vw); margin:0 auto">
+      <h2 style="margin:0 0 50px; font-size:clamp(30px,2.89vw,55.5px); font-weight:700; line-height:1.3; color:#fff">Наша команда</h2>
+      <div style="display:grid; grid-template-columns:minmax(0,66%) minmax(0,34%); gap:3.4vw; align-items:center">
+        <div style="position:relative">
+          <img src="assets/team-1.png" alt="Команда BES" style="width:100%; height:auto; border-radius:12px" />
+          <div style="position:absolute; right:22px; top:50%; transform:translateY(-50%); width:50px; height:50px; border-radius:25px; background:rgba(255,255,255,.9); display:grid; place-items:center">
+            <svg width="12" height="20" viewBox="0 0 11 20" fill="#000"><path d="M0 .79.8 0l9.68 9.62L.8 19.24l-.8-.8 8.89-8.82L0 .79z"/></svg>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:34px">
+          <p style="margin:0; font-size:clamp(14px,1.3vw,25px); line-height:1.2; color:#fff">У BES ми віримо, що справжня сила компанії — це люди, які їх створюють. Саме тому ми будуємо культуру, де кожен фахівець може проявити себе, впливати на результат і рости разом із командою.</p>
+          <p style="margin:0; font-size:clamp(14px,1.3vw,25px); line-height:1.2; color:#fff">Ми прагнемо створювати середовище, де таланти розкриваються, а професіоналізм поєднується з людяністю та відповідальністю.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ showBenefits }}" hint-placeholder-val="{{ true }}">
+  <section style="padding:100px 0">
+    <div style="width:min(1782px,92.8vw); margin:0 auto">
+      <h2 style="margin:0 0 50px; font-size:clamp(30px,2.89vw,55.5px); font-weight:700; line-height:1.3; color:#2e393f">Що ми пропонуємо</h2>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(14px,0.45vw,9px) clamp(14px,0.45vw,9px); gap:9px">
+        <div style="background:#fff; border-radius:42px; padding:13px">
+          <div style="background:#2e393f; border-radius:42px; height:clamp(120px,11.3vw,217px); display:grid; place-items:center; overflow:hidden">
+            <img src="assets/benefit-1.png" alt="" style="max-width:60%; max-height:106%; width:auto; height:auto" />
+          </div>
+          <div style="padding:34px 20px 40px; text-align:center; font-size:clamp(15px,1.39vw,26.7px); font-weight:500; line-height:1.2; color:#2e393f">Віддалена робота або<br />робота в офісі</div>
+        </div>
+        <div style="background:#fff; border-radius:42px; padding:13px">
+          <div style="background:#2e393f; border-radius:42px; height:clamp(120px,11.3vw,217px); display:grid; place-items:center; overflow:hidden">
+            <img src="assets/benefit-2.png" alt="" style="max-width:60%; max-height:106%; width:auto; height:auto" />
+          </div>
+          <div style="padding:34px 20px 40px; text-align:center; font-size:clamp(15px,1.39vw,26.7px); font-weight:500; line-height:1.2; color:#2e393f">Повне технічне<br />забезпечення</div>
+        </div>
+        <div style="background:#fff; border-radius:42px; padding:13px">
+          <div style="background:#2e393f; border-radius:42px; height:clamp(120px,11.3vw,217px); display:grid; place-items:center; overflow:hidden">
+            <img src="assets/benefit-3.png" alt="" style="max-width:60%; max-height:106%; width:auto; height:auto" />
+          </div>
+          <div style="padding:34px 20px 40px; text-align:center; font-size:clamp(15px,1.39vw,26.7px); font-weight:500; line-height:1.2; color:#2e393f">Оплачувана відпустка<br />та лікарняні</div>
+        </div>
+        <div style="background:#fff; border-radius:42px; padding:13px">
+          <div style="background:#2e393f; border-radius:42px; height:clamp(120px,11.3vw,217px); display:grid; place-items:center; overflow:hidden">
+            <img src="assets/benefit-4.png" alt="" style="max-width:60%; max-height:106%; width:auto; height:auto" />
+          </div>
+          <div style="padding:34px 20px 40px; text-align:center; font-size:clamp(15px,1.39vw,26.7px); font-weight:500; line-height:1.2; color:#2e393f">Приємні та корисні<br />подарунки на свята</div>
+        </div>
+        <div style="background:#fff; border-radius:42px; padding:13px">
+          <div style="background:#2e393f; border-radius:42px; height:clamp(120px,11.3vw,217px); display:grid; place-items:center; overflow:hidden">
+            <img src="assets/benefit-5.png" alt="" style="max-width:60%; max-height:106%; width:auto; height:auto" />
+          </div>
+          <div style="padding:34px 20px 40px; text-align:center; font-size:clamp(15px,1.39vw,26.7px); font-weight:500; line-height:1.2; color:#2e393f">Компенсація на<br />дозвілля</div>
+        </div>
+        <div style="background:#fff; border-radius:42px; padding:13px">
+          <div style="background:#2e393f; border-radius:42px; height:clamp(120px,11.3vw,217px); display:grid; place-items:center; overflow:hidden">
+            <img src="assets/benefit-6.png" alt="" style="max-width:60%; max-height:106%; width:auto; height:auto" />
+          </div>
+          <div style="padding:34px 20px 40px; text-align:center; font-size:clamp(15px,1.39vw,26.7px); font-weight:500; line-height:1.2; color:#2e393f">Бонуси за підвищення<br />рівня англійської</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <section style="width:100%; background:#fff; border-radius:42px; padding:100px 0 110px">
+    <div style="width:min(1782px,92.8vw); margin:0 auto">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; align-items:start; margin-bottom:56px">
+        <h2 style="margin:0; font-size:clamp(30px,2.89vw,55.5px); font-weight:700; line-height:1.3; color:#2e393f">Корпоративні онлайн заходи</h2>
+        <p style="margin:0; font-size:clamp(14px,1.3vw,25px); line-height:1.2; color:#2e393f">Організовуємо інтерактивні онлайн-зустрічі та активності, які сприяють командній взаємодії, підсилюють мотивацію та створюють атмосферу залученості у щоденній роботі.</p>
+      </div>
+      <img src="assets/online-events.png" alt="Онлайн заходи BES" style="width:100%; height:auto; border-radius:28px" />
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px,2vw,38px); margin-top:90px">
+        <div>
+          <h2 style="margin:0 0 30px; font-size:clamp(26px,2.89vw,55.5px); font-weight:700; line-height:1.1; color:#2e393f">Активна підтримка<br />розвитку спорту</h2>
+          <p style="margin:0 0 40px; font-size:clamp(13px,1.05vw,20px); line-height:1.35; color:#2e393f">BES підтримує активний спосіб життя співробітників: компенсуємо тренування, об'єднуємо команду у спортивних ініціативах та створюємо середовище, де легко тримати баланс.</p>
+          <img src="assets/sport.png" alt="Спорт у BES" style="width:100%; height:auto; border-radius:28px" />
+        </div>
+        <div>
+          <h2 style="margin:0 0 30px; font-size:clamp(26px,2.89vw,55.5px); font-weight:700; line-height:1.1; color:#2e393f">Програма навчання для<br />кандидатів без досвіду</h2>
+          <p style="margin:0 0 40px; font-size:clamp(13px,1.05vw,20px); line-height:1.35; color:#2e393f">Немає досвіду в BIM? Наша програма SkillSprint допоможе стати професіоналом. 300+ випускників вже розпочали успішну кар'єру у BES завдяки SkillSprint. Компанія оплачує вам навчання.</p>
+          <img src="assets/skillsprint.png" alt="Програма SkillSprint" style="width:100%; height:auto; border-radius:28px" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="position:relative; padding:110px 0 120px; display:grid; place-items:center">
+    <img src="assets/quote-bg.png" alt="" style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:min(878px,46vw); height:auto; opacity:1" />
+    <h2 style="position:relative; margin:0; max-width:min(957px,50vw); text-align:center; font-size:clamp(28px,4.33vw,83.2px); line-height:1.0; font-weight:700; color:#2e393f">BES – це місце, де ви зможете працювати над проєктами світового рівня, розвиватися професійно та будувати стабільну кар'єру.</h2>
+  </section>
+
+  <section style="padding:0 0 110px">
+    <div style="width:min(1782px,92.8vw); margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:clamp(16px,0.4vw,8px); gap:8px">
+      <div style="background:#fff; border-radius:42px; padding:clamp(40px,3.4vw,66px) clamp(24px,3vw,58px) clamp(40px,3.6vw,70px); display:flex; flex-direction:column; align-items:center; text-align:center">
+        <div style="font-size:clamp(19px,1.81vw,34.7px); font-weight:400; line-height:1; color:#2e393f">Приєднуйся до нас!</div>
+        <h2 style="margin:34px 0 auto; font-size:clamp(26px,2.89vw,55.5px); font-weight:700; line-height:1.0; color:#2e393f">Маєш досвід<br />в BIM?</h2>
+        <a href="https://bengs.peopleforce.io/careers" style="margin-top:46px; width:min(459px,100%); display:grid; place-items:center; height:50px; border-radius:20px; background:#00d4b4; color:#fff; font-size:clamp(15px,0.94vw,18px); font-weight:500" style-hover="background:#00c5a7; color:#fff">Переглянути вакансії</a>
+      </div>
+      <div style="background:#2e393f; border-radius:42px; padding:clamp(40px,3.4vw,66px) clamp(24px,3vw,58px) clamp(40px,3.6vw,70px); display:flex; flex-direction:column; align-items:center; text-align:center">
+        <div style="font-size:clamp(19px,1.81vw,34.7px); font-weight:400; line-height:1; color:#fff">Приєднуйся до нас!</div>
+        <h2 style="margin:34px 0 auto; font-size:clamp(26px,2.89vw,55.5px); font-weight:700; line-height:1.0; color:#fff">Поки не маєш<br />досвіду?</h2>
+        <a href="https://www.bes.in.ua/skillsprint" style="margin-top:46px; width:min(459px,100%); display:grid; place-items:center; height:50px; border-radius:20px; background:#00d4b4; color:#fff; font-size:clamp(15px,0.94vw,18px); font-weight:500" style-hover="background:#00b499; color:#fff">Програма SkillSprint</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#00c5a7; padding:60px 4vw 40px">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; align-items:center; max-width:1800px; margin:0 auto">
+      <a href="https://www.bes.in.ua" style="display:block"><img src="assets/logo-footer.png" alt="BES" style="width:min(333px,20vw); height:auto; margin-left:clamp(0px,11vw,227px)" /></a>
+      <div style="display:grid; grid-template-columns:1fr auto; gap:3vw; align-items:center">
+        <div style="display:flex; flex-direction:column; gap:2px; font-size:16px; line-height:1.6">
+          <a href="SkillSprint.dc.html" style="color:#fff">SkillSprint</a>
+          <a href="https://www.bes.in.ua" style="color:#fff">BES</a>
+          <a href="https://t.me/b_eng_s_bot" style="color:#fff">Заявка на навчання</a>
+          <a href="https://bengs.peopleforce.io/careers" style="color:#fff">Відкриті вакансії</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:26px; padding-right:clamp(0px,20vw,384px)">
+          <a href="https://www.linkedin.com/company/b-eng-s" aria-label="LinkedIn" style="display:block">
+            <svg width="50" height="50" viewBox="0 0 60.77 60.77" fill="#fff"><path d="M 54.018 0 C 55.809 0 57.526 0.711 58.792 1.978 C 60.059 3.244 60.77 4.961 60.77 6.752 L 60.77 54.018 C 60.77 55.809 60.059 57.526 58.792 58.792 C 57.526 60.059 55.809 60.77 54.018 60.77 L 6.752 60.77 C 4.961 60.77 3.244 60.059 1.978 58.792 C 0.711 57.526 0 55.809 0 54.018 L 0 6.752 C 0 4.961 0.711 3.244 1.978 1.978 C 3.244 0.711 4.961 0 6.752 0 L 54.018 0 Z M 52.33 52.33 L 52.33 34.436 C 52.33 31.517 51.17 28.718 49.106 26.654 C 47.042 24.59 44.243 23.43 41.324 23.43 C 38.455 23.43 35.112 25.186 33.491 27.819 L 33.491 24.07 L 24.073 24.07 L 24.073 52.33 L 33.491 52.33 L 33.491 35.684 C 33.491 33.086 35.584 30.958 38.185 30.958 C 39.439 30.958 40.641 31.456 41.527 32.342 C 42.414 33.228 42.912 34.431 42.912 35.684 L 42.912 52.33 L 52.33 52.33 Z M 13.099 18.771 C 14.604 18.771 16.046 18.174 17.11 17.11 C 18.174 16.046 18.771 14.604 18.771 13.099 C 18.775 11.591 18.179 10.143 17.116 9.073 C 16.052 8.004 14.608 7.4 13.099 7.395 C 12.35 7.394 11.608 7.541 10.916 7.828 C 10.223 8.114 9.594 8.534 9.064 9.064 C 8.534 9.594 8.114 10.223 7.828 10.916 C 7.541 11.608 7.394 12.35 7.395 13.099 C 7.395 16.238 9.961 18.771 13.099 18.771 Z M 17.793 52.33 L 17.793 24.073 L 8.44 24.073 L 8.44 52.33 L 17.793 52.33 Z" fill-rule="nonzero"/></svg>
+          </a>
+          <a href="https://www.instagram.com/bes.team.bim" aria-label="Instagram" style="display:block">
+            <svg width="50" height="50" viewBox="0 0 60.77 60.77" fill="#fff"><path d="M 13.023 0 C 9.57 0 6.259 1.371 3.816 3.813 C 1.374 6.254 0.001 9.565 0 13.018 L 0 47.747 C 0 51.201 1.372 54.513 3.814 56.956 C 6.257 59.398 9.569 60.77 13.023 60.77 L 47.752 60.77 C 51.205 60.769 54.516 59.396 56.957 56.954 C 59.399 54.511 60.77 51.2 60.77 47.747 L 60.77 13.018 C 60.769 9.566 59.397 6.255 56.956 3.814 C 54.515 1.373 51.204 0.001 47.752 0 L 13.023 0 Z M 51.498 13.037 C 51.498 14.032 51.103 14.986 50.399 15.689 C 49.696 16.393 48.742 16.788 47.747 16.788 C 46.752 16.788 45.798 16.393 45.094 15.689 C 44.391 14.986 43.995 14.032 43.995 13.037 C 43.995 12.042 44.391 11.088 45.094 10.384 C 45.798 9.681 46.752 9.285 47.747 9.285 C 48.742 9.285 49.696 9.681 50.399 10.384 C 51.103 11.088 51.498 12.042 51.498 13.037 Z M 30.393 19.979 C 27.634 19.979 24.988 21.075 23.037 23.026 C 21.086 24.977 19.99 27.623 19.99 30.382 C 19.99 33.141 21.086 35.787 23.037 37.738 C 24.988 39.689 27.634 40.785 30.393 40.785 C 33.152 40.785 35.798 39.689 37.749 37.738 C 39.7 35.787 40.796 33.141 40.796 30.382 C 40.796 27.623 39.7 24.977 37.749 23.026 C 35.798 21.075 33.152 19.979 30.393 19.979 Z M 14.984 30.382 C 14.984 28.359 15.382 26.356 16.156 24.487 C 16.93 22.619 18.065 20.92 19.495 19.49 C 20.926 18.06 22.624 16.925 24.493 16.151 C 26.362 15.377 28.365 14.978 30.388 14.978 C 32.411 14.978 34.414 15.377 36.283 16.151 C 38.151 16.925 39.85 18.06 41.28 19.49 C 42.71 20.92 43.845 22.619 44.619 24.487 C 45.393 26.356 45.792 28.359 45.792 30.382 C 45.792 34.468 44.169 38.386 41.28 41.275 C 38.391 44.163 34.473 45.786 30.388 45.786 C 26.302 45.786 22.384 44.163 19.495 41.275 C 16.607 38.386 14.984 34.468 14.984 30.382 Z" fill-rule="evenodd"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw; max-width:1800px; margin:60px auto 0; font-size:13.5px; color:#fff">
+      <span></span>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:3vw">
+        <span>© 2026 усі права захищені.</span>
+        <a href="https://www.bes.in.ua/privacy-policy" style="color:#fff">Політика конфіденційності</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showTeam&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Секції&quot;},&quot;showBenefits&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Секції&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showTeam: this.props.showTeam ?? true,
+      showBenefits: this.props.showBenefits ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

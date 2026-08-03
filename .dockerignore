@@ -1,0 +1,40 @@
+# Ставимо залежності всередині образу — локальні node_modules тільки роздують контекст
+node_modules
+**/node_modules
+
+# Артефакти збірки
+dist
+**/dist
+build
+**/build
+.vite
+**/.vite
+
+# Секрети НІКОЛИ не потрапляють в образ — вони передаються через env/build-args
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example
+
+# VCS та інструментарій
+.git
+.gitignore
+.claude
+.vscode
+.idea
+
+# Дизайн-бандл із прототипами — у продакшн-образі не потрібен
+bes-in-ua-react
+
+# Інше
+*.log
+npm-debug.log*
+coverage
+README.md
+Dockerfile
+**/Dockerfile
+docker-compose.yml
+.DS_Store
+Thumbs.db

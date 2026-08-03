@@ -1,0 +1,23 @@
+.h2 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.md {
+  font-size: var(--fs-h2);
+}
+
+.lg {
+  font-size: var(--fs-h2-lg);
+  line-height: 1.3;
+}
+
+.dark {
+  color: var(--c-dark);
+}
+
+.white {
+  color: var(--c-white);
+}

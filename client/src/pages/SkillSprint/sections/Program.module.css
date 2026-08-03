@@ -1,0 +1,178 @@
+.section {
+  padding: 0 0 var(--sp-section);
+}
+
+.title {
+  margin: clamp(14px, 1.1vw, 21px) 0 clamp(20px, 1.8vw, 35px);
+}
+
+/*
+ * 6 колонок по 2 на картку замість 3 по 1 — так два модулі другого ряду
+ * можна зсунути на пів-колонки й отримати центрування, як на живому сайті.
+ */
+.modules {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: var(--sp-gap);
+}
+
+.card {
+  grid-column: span 2;
+  display: flex;
+  gap: var(--sp-gap);
+  justify-content: space-between;
+  border-radius: var(--r-card);
+  padding: clamp(18px, 1.9vw, 34px);
+}
+
+/* Четверта картка стартує з другої колонки — центрує останній ряд */
+.card:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
+.white {
+  background: var(--c-white);
+}
+
+.petrol {
+  background: var(--c-petrol);
+}
+
+.cardText {
+  min-width: 0;
+}
+
+/* Розміри зняті з живого сайту: 1.88vw / 1.25vw / 1.25vw */
+.moduleTitle {
+  font-size: clamp(17px, 1.88vw, 31px);
+  font-weight: 700;
+  color: var(--c-dark);
+}
+
+/* Тиждень — помаранчевий на обох варіантах картки */
+.week {
+  margin: 6px 0 16px;
+  font-size: clamp(13px, 1.25vw, 21px);
+  font-weight: 600;
+  color: var(--c-orange-hover);
+}
+
+.moduleText {
+  font-size: clamp(13px, 1.25vw, 21px);
+  line-height: 1.35;
+  color: var(--c-dark);
+}
+
+.petrol .moduleTitle,
+.petrol .moduleText {
+  color: var(--c-white);
+}
+
+/* В оригіналі ілюстрація займає близько третини картки, а не п'яту частину */
+.img {
+  flex-shrink: 0;
+  width: clamp(76px, 8vw, 132px);
+  height: auto;
+  align-self: center;
+  border-radius: 10px;
+}
+
+.secondTitle {
+  margin: clamp(36px, 3.6vw, 70px) 0 clamp(20px, 1.8vw, 35px);
+  line-height: 1.1;
+}
+
+/* «SkillSprint» у заголовку виділений бірюзовим */
+.brand {
+  color: var(--c-teal);
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+  gap: var(--sp-gap);
+  align-items: stretch;
+}
+
+/* Обгортка reveal має тягнутись на всю висоту клітинки, як і саме прев'ю */
+.showcaseCell {
+  min-width: 0;
+}
+
+.showcaseCell > * {
+  height: 100%;
+}
+
+.payCard {
+  background: var(--c-dark);
+  border-radius: var(--r-card);
+  padding: clamp(20px, 2.2vw, 42px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.payTile {
+  display: grid;
+  place-items: center;
+  width: clamp(70px, 6vw, 115px);
+  height: clamp(70px, 6vw, 115px);
+  margin-bottom: clamp(14px, 1.4vw, 27px);
+  background: var(--c-white);
+  border-radius: 16px;
+}
+
+.payImg {
+  width: 78%;
+  height: auto;
+}
+
+/* 2.74vw і 1.72vw — з живого сайту */
+.payTitle {
+  font-size: clamp(20px, 2.74vw, 45px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--c-white);
+}
+
+/* Підпис під заголовком — помаранчевий, як на живому сайті */
+.payText {
+  margin-top: clamp(12px, 1.2vw, 22px);
+  font-size: clamp(14px, 1.72vw, 28px);
+  line-height: 1.3;
+  color: var(--c-orange);
+}
+
+@media (max-width: 1024px) {
+  .modules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .card,
+  .card:nth-child(4) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .showcase {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .payCard {
+    padding: 28px 22px;
+  }
+}
+
+@media (max-width: 640px) {
+  .modules {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .week {
+    font-size: 14px;
+  }
+}

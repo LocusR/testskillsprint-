@@ -1,0 +1,92 @@
+.logo {
+  width: clamp(90px, 7vw, 134px);
+  height: auto;
+  margin-bottom: clamp(16px, 1.6vw, 31px);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3vw;
+  align-items: start;
+}
+
+.text {
+  font-size: clamp(12px, 1.05vw, 20px);
+  line-height: 1.35;
+  color: var(--c-white);
+}
+
+.clientsWrap {
+  margin: clamp(20px, 2.2vw, 42px) 0;
+}
+
+.clients {
+  width: 100%;
+  height: auto;
+}
+
+/* На живому сайті плитки метрик стоять впритул, без проміжків */
+.metrics {
+  margin-top: clamp(20px, 2.2vw, 42px);
+  gap: 0;
+}
+
+.metricCard {
+  border-radius: var(--r-card);
+  padding: clamp(16px, 1.7vw, 33px);
+  transition: transform 0.3s var(--hover-ease);
+}
+
+.metricCard:hover {
+  transform: translateY(-5px);
+  /* Піднята плитка має перекривати сусідні, бо між ними немає зазору */
+  position: relative;
+  z-index: 1;
+}
+
+.dark {
+  background: var(--c-dark);
+  color: var(--c-white);
+}
+
+.white {
+  background: var(--c-white);
+  color: var(--c-dark);
+}
+
+.orange {
+  background: var(--c-orange);
+  color: var(--c-dark);
+}
+
+.light {
+  background: var(--c-bg);
+  color: var(--c-dark);
+}
+
+.metricValue {
+  font-size: var(--fs-stat);
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+}
+
+.metricLabel {
+  margin-top: 10px;
+  font-size: var(--fs-small);
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .head {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .text {
+    font-size: 15px;
+  }
+}

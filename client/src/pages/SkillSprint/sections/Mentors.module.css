@@ -1,0 +1,69 @@
+.head {
+  margin: clamp(14px, 1.1vw, 21px) 0 clamp(20px, 1.8vw, 35px);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2vw;
+  flex-wrap: wrap;
+}
+
+.subtitle {
+  font-size: clamp(12px, 1.05vw, 20px);
+  color: var(--c-dark);
+}
+
+.card {
+  background: var(--c-bg);
+  border-radius: var(--r-card);
+  padding: clamp(18px, 1.8vw, 34px);
+  text-align: center;
+}
+
+.photoWrap {
+  display: block;
+  width: clamp(80px, 7.2vw, 139px);
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+}
+
+.name {
+  margin-top: clamp(14px, 1.7vw, 33px);
+  font-size: clamp(14px, 1.32vw, 25.3px);
+  font-weight: 500;
+  color: var(--c-dark);
+}
+
+/* Роль помаранчева — як на живому сайті */
+.role {
+  margin-top: 10px;
+  font-size: var(--fs-caption);
+  color: var(--c-orange);
+}
+
+@media (max-width: 640px) {
+  .head {
+    gap: 10px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .card {
+    padding: 22px 18px;
+  }
+
+  .photoWrap {
+    width: 110px;
+  }
+
+  .name {
+    margin-top: 16px;
+    font-size: 18px;
+  }
+}

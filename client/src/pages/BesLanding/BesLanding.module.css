@@ -1,0 +1,494 @@
+/* ============ Hero ============ */
+.hero {
+  padding: 60px 0 90px;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 860px) minmax(0, 939px);
+  gap: 2.5vw;
+  align-items: center;
+}
+
+.heroTitle {
+  margin: 0;
+  font-size: clamp(28px, 2.9vw, 55.6px);
+  line-height: 1;
+  font-weight: 700;
+  color: var(--c-dark);
+}
+
+.heroLead {
+  margin: 34px 0 44px;
+  font-size: clamp(17px, 1.74vw, 33.4px);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--c-dark);
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 459px;
+}
+
+/* ============ Про нас ============ */
+.about {
+  width: 100%;
+  background: var(--c-white);
+  border-radius: var(--r-section-lg);
+  padding: 80px 0 100px;
+}
+
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3vw;
+  align-items: start;
+  margin-bottom: 56px;
+}
+
+.aboutLead {
+  font-size: var(--fs-body-lg);
+  line-height: 1.25;
+  color: var(--c-dark);
+}
+
+.clients {
+  width: 100%;
+  height: auto;
+}
+
+.aboutText {
+  margin: 56px 0 70px;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 1455px;
+}
+
+.metricCard {
+  border-radius: var(--r-xl);
+  padding: clamp(22px, 2.2vw, 42px) clamp(18px, 1.7vw, 33px) clamp(24px, 2vw, 38px);
+}
+
+.dark {
+  background: var(--c-dark);
+}
+.teal {
+  background: var(--c-teal);
+}
+.orange {
+  background: var(--c-orange);
+}
+
+.metricValue {
+  font-size: var(--fs-stat-lg);
+  font-weight: 500;
+  line-height: 1;
+  color: var(--c-white);
+}
+
+.metricLabel {
+  margin-top: 18px;
+  font-size: clamp(14px, 1.73vw, 33.3px);
+  font-weight: 400;
+  color: var(--c-white);
+}
+
+/* ============ Проєкти ============ */
+.projects {
+  padding: 100px 0;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 42%) minmax(0, 58%);
+  gap: 3vw;
+  align-items: start;
+}
+
+.projectsTitle {
+  margin-bottom: 44px;
+}
+
+.projectImg {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-sm);
+}
+
+/* ============ Команда ============ */
+.team {
+  width: 100%;
+  background: var(--c-teal);
+  border-radius: var(--r-section-lg);
+  padding: 90px 0 100px;
+}
+
+.teamTitle {
+  margin-bottom: 50px;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 66%) minmax(0, 34%);
+  gap: 3.4vw;
+  align-items: center;
+}
+
+.teamCarousel {
+  min-width: 0;
+}
+
+.teamText {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  font-size: clamp(14px, 1.3vw, 25px);
+  line-height: 1.35;
+  color: var(--c-white);
+}
+
+.teamText strong {
+  font-weight: 700;
+}
+
+/* ============ Бенефіти ============ */
+.benefits {
+  padding: 100px 0;
+}
+
+.benefitsTitle {
+  margin-bottom: 50px;
+}
+
+.benefitCard {
+  background: var(--c-white);
+  border-radius: var(--r-section-lg);
+  padding: 13px;
+}
+
+.benefitImgWrap {
+  background: var(--c-dark);
+  border-radius: var(--r-section-lg);
+  height: clamp(120px, 11.3vw, 217px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.benefitImg {
+  max-width: 60%;
+  max-height: 106%;
+  width: auto;
+  height: auto;
+}
+
+.benefitText {
+  padding: 34px 20px 40px;
+  text-align: center;
+  font-size: var(--fs-body-lg);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--c-dark);
+}
+
+/* ============ Онлайн заходи ============ */
+.events {
+  width: 100%;
+  background: var(--c-white);
+  border-radius: var(--r-section-lg);
+  padding: 100px 0 110px;
+}
+
+.eventsText {
+  font-size: clamp(14px, 1.3vw, 25px);
+  line-height: 1.2;
+  color: var(--c-dark);
+}
+
+.eventsImg {
+  width: 100%;
+  height: auto;
+  border-radius: 28px;
+}
+
+.eventsBottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-block);
+  margin-top: 90px;
+}
+
+.eventsSubTitle {
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+.eventsSubText {
+  margin-bottom: 40px;
+  font-size: var(--fs-body);
+  line-height: 1.35;
+  color: var(--c-dark);
+}
+
+/*
+ * sport.png і skillsprint.png мають різну ширину (865 і 883) при однаковій
+ * висоті, через що низи колонок розходились на кілька пікселів.
+ * Фіксована пропорція вирівнює їх точно.
+ */
+.eventsSubImg {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+/* ============ Цитата ============ */
+.quote {
+  position: relative;
+  padding: 110px 0 120px;
+  display: grid;
+  place-items: center;
+}
+
+/*
+ * Смуги і текст міряються у відсотках ОДНОГО контейнера, а не двома
+ * незалежними vw-формулами — так смуги гарантовано ширші за текст
+ * на будь-якій ширині екрана.
+ */
+.quoteInner {
+  position: relative;
+  width: var(--w-container-wide);
+  max-width: 1400px;
+  display: grid;
+  place-items: center;
+}
+
+.quoteBg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 86%;
+  height: auto;
+  pointer-events: none;
+}
+
+.quoteText {
+  position: relative;
+  margin: 0;
+  max-width: 66%;
+  text-align: center;
+  font-size: clamp(26px, 4.33vw, 83.2px);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--c-dark);
+  text-wrap: balance;
+}
+
+/* ============ CTA ============ */
+.cta {
+  padding: 0 0 110px;
+}
+
+.ctaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  /* Раніше ширину давав <Container size="wide">, тепер задаємо тут */
+  width: var(--w-container-wide);
+  margin-inline: auto;
+}
+
+.ctaCard {
+  background: var(--c-white);
+  border-radius: var(--r-section-lg);
+  padding: clamp(40px, 3.4vw, 66px) clamp(24px, 3vw, 58px) clamp(40px, 3.6vw, 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.ctaCardDark {
+  background: var(--c-dark);
+}
+
+.ctaKicker {
+  font-size: clamp(17px, 1.81vw, 34.7px);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--c-dark);
+}
+
+.ctaTitle {
+  margin: 34px 0 auto;
+  font-size: var(--fs-h2-lg);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-dark);
+}
+
+.ctaCardDark .ctaKicker,
+.ctaCardDark .ctaTitle {
+  color: var(--c-white);
+}
+
+.ctaButton {
+  margin-top: 46px;
+}
+
+/* ============ Адаптив ============ */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 40px 0 60px;
+  }
+
+  .heroGrid,
+  .projectsGrid,
+  .teamGrid,
+  .eventsBottom {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .about,
+  .events {
+    padding: 56px 0 64px;
+  }
+
+  .projects,
+  .benefits {
+    padding: 56px 0;
+  }
+
+  .team {
+    padding: 56px 0 64px;
+  }
+
+  .twoCol,
+  .aboutText {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .aboutText {
+    margin: 36px 0 44px;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .metricLabel {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .projectsTitle,
+  .teamTitle,
+  .benefitsTitle {
+    margin-bottom: 24px;
+  }
+
+  .eventsBottom {
+    margin-top: 48px;
+  }
+
+  .eventsSubTitle {
+    margin-bottom: 18px;
+  }
+
+  .eventsSubText {
+    margin-bottom: 24px;
+  }
+
+  .quote {
+    padding: 72px 0 80px;
+  }
+
+  .quoteBg {
+    width: 100%;
+  }
+
+  /*
+   * Коефіцієнт лишається 4.33vw, як на десктопі й на живому сайті (4.26vw).
+   * Раніше тут стояло 5.4vw «на око» — цитата на планшеті виходила
+   * на чверть більшою за оригінал.
+   */
+  .quoteText {
+    max-width: 88%;
+    font-size: clamp(26px, 4.33vw, 56px);
+  }
+
+  .cta {
+    padding: 0 0 64px;
+  }
+
+  .heroLead {
+    margin: 22px 0 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .metrics {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .metricCard {
+    padding: 22px 20px 24px;
+  }
+
+  .metricValue {
+    font-size: 56px;
+  }
+
+  .ctaGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .teamArrow {
+    width: 40px;
+    height: 40px;
+    right: 14px;
+  }
+
+  .benefitText {
+    padding: 22px 14px 26px;
+  }
+
+  .benefitImgWrap {
+    height: 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .heroActions {
+    max-width: none;
+    gap: 14px;
+  }
+
+  .ctaCard {
+    padding: 32px 22px 36px;
+  }
+
+  .ctaTitle {
+    margin: 20px 0 0;
+  }
+
+  .ctaButton {
+    margin-top: 28px;
+  }
+
+  .eventsImg,
+  .eventsSubImg {
+    border-radius: 18px;
+  }
+}

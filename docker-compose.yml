@@ -1,0 +1,45 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    image: bes-skillsprint-server
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      # Фронт і API на одному origin через nginx, тож CORS потрібен,
+      # тільки якщо API смикають зі стороннього домену.
+      CORS_ORIGIN: ${CORS_ORIGIN:-}
+      BES_CENTER_API_URL: ${BES_CENTER_API_URL:-https://bes-center.com/skill-sprint/external/candidates}
+      BES_CENTER_API_KEY: ${BES_CENTER_API_KEY:?BES_CENTER_API_KEY не заданий — заповніть .env}
+      RECAPTCHA_SECRET_KEY: ${RECAPTCHA_SECRET_KEY:?RECAPTCHA_SECRET_KEY не заданий — заповніть .env}
+      RATE_LIMIT_WINDOW_MS: ${RATE_LIMIT_WINDOW_MS:-900000}
+      RATE_LIMIT_MAX: ${RATE_LIMIT_MAX:-10}
+    expose:
+      - '4000'
+    networks:
+      - bes
+
+  client:
+    build:
+      context: .
+      dockerfile: client/Dockerfile
+      args:
+        # Vite вшиває їх у бандл під час build — після зміни потрібна перезбірка:
+        #   docker compose build --no-cache client
+        VITE_RECAPTCHA_SITE_KEY: ${VITE_RECAPTCHA_SITE_KEY:-}
+        VITE_GA_MEASUREMENT_ID: ${VITE_GA_MEASUREMENT_ID:-}
+    image: bes-skillsprint-client
+    restart: unless-stopped
+    ports:
+      - '${WEB_PORT:-8080}:80'
+    depends_on:
+      server:
+        condition: service_healthy
+    networks:
+      - bes
+
+networks:
+  bes:
+    driver: bridge

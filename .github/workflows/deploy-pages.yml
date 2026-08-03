@@ -1,0 +1,67 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Паралельні деплої Pages конфліктують — лишаємо тільки найсвіжіший
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # playwright у devDependencies тягне ~150 МБ браузерів на postinstall.
+      # Для збірки сайту вони не потрібні.
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Встановити залежності
+        run: npm ci
+
+      - name: Зібрати фронтенд
+        run: npm run build --workspace client
+        env:
+          # VITE_* вшиваються у бандл на етапі збірки, тому саме тут.
+          # Задається у Settings -> Secrets and variables -> Actions.
+          VITE_RECAPTCHA_SITE_KEY: ${{ secrets.VITE_RECAPTCHA_SITE_KEY }}
+          VITE_GA_MEASUREMENT_ID: ${{ vars.VITE_GA_MEASUREMENT_ID }}
+          # Для github.io/<repo>/ треба задати BASE_PATH=/SkillSprint/
+          # (див. vite.config.ts). Для власного домену лишати порожнім.
+          BASE_PATH: ${{ vars.BASE_PATH }}
+
+      - name: SPA-fallback
+        # GitHub Pages не має rewrite-правил: невідомий шлях віддає 404.html.
+        # Копія index.html робить із неї точку входу застосунку, і глибокі
+        # посилання (/blog/стаття) починають працювати.
+        run: cp client/dist/index.html client/dist/404.html
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: client/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

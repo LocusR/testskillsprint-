@@ -1,0 +1,133 @@
+.base {
+  display: grid;
+  place-items: center;
+  height: var(--btn-h);
+  padding: 0 24px;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: clamp(15px, 1.05vw, 20px);
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background 0.4s ease,
+    filter var(--transition),
+    transform 0.25s var(--hover-ease),
+    box-shadow 0.25s var(--hover-ease),
+    opacity var(--transition);
+}
+
+/* Спільний ховер: кнопка трохи підіймається і набирає тінь */
+.base:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.base:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.base:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* --- Радіуси: у прототипі 15px на секційних CTA і 20px на хедері --- */
+.radiusMd {
+  border-radius: var(--r-md);
+}
+.radiusLg {
+  border-radius: var(--r-lg);
+}
+
+/* --- Варіанти --- */
+.accent {
+  background: var(--c-teal-accent);
+  color: var(--c-white);
+}
+.accent:hover:not(:disabled) {
+  background: var(--c-teal);
+  color: var(--c-white);
+}
+
+.gradient {
+  background: var(--grad-cta);
+  box-shadow: var(--shadow-cta);
+  color: var(--c-white);
+}
+.gradient:hover:not(:disabled) {
+  filter: brightness(1.05);
+  box-shadow: 0 8px 20px rgba(0, 197, 167, 0.35);
+  color: var(--c-white);
+}
+
+.orange {
+  background: var(--c-orange);
+  color: var(--c-white);
+}
+.orange:hover:not(:disabled) {
+  background: var(--c-orange-hover);
+  color: var(--c-white);
+}
+
+/* Помаранчевий градієнт із живого сайту: #fba162 → #ff7616 */
+.gradientOrange {
+  background: var(--grad-cta-orange);
+  color: var(--c-white);
+}
+.gradientOrange:hover:not(:disabled) {
+  filter: brightness(1.06);
+  box-shadow: 0 8px 20px rgba(255, 118, 22, 0.35);
+  color: var(--c-white);
+}
+
+.dark {
+  background: var(--c-dark);
+  color: var(--c-white);
+}
+.dark:hover:not(:disabled) {
+  background: var(--c-dark-hover);
+  color: var(--c-white);
+}
+
+.teal {
+  background: var(--c-teal-accent);
+  color: var(--c-white);
+}
+.teal:hover:not(:disabled) {
+  background: var(--c-teal-hover);
+  color: var(--c-white);
+}
+
+/* --- Ширина --- */
+.wide {
+  width: var(--btn-w);
+}
+.full {
+  width: 100%;
+}
+/*
+ * Хедерна CTA. На живому сайті вона фіксовані 205×50.
+ * Прототипний clamp(150px, 10.7vw, 205px) дотягувався до 205px лише
+ * на ~1900px екрані, тож на звичайному десктопі кнопка виходила ~154px.
+ */
+.auto {
+  width: clamp(170px, 14vw, 205px);
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .base:hover:not(:disabled) {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .base {
+    font-size: 16px;
+  }
+  .auto {
+    width: 100%;
+  }
+}

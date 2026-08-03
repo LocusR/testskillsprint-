@@ -1,0 +1,105 @@
+.wrap {
+  position: relative;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  /* Смуга прокрутки прихована — керуємо стрілками і свайпом */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.track:focus-visible {
+  outline: 3px solid var(--c-white);
+  outline-offset: 4px;
+  border-radius: var(--r-sm);
+}
+
+.slide {
+  flex: 0 0 calc(100% - var(--peek, 6%));
+  scroll-snap-align: start;
+  min-width: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  color: var(--c-black);
+  transition:
+    background var(--transition),
+    opacity var(--transition);
+}
+
+.arrow:hover:not(:disabled) {
+  background: var(--c-white);
+}
+
+.arrow:disabled {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.prev {
+  left: 16px;
+}
+
+.prev svg {
+  transform: rotate(180deg);
+}
+
+/*
+ * Стрілка «далі» має сидіти на правому краї ВИДИМОГО слайда, а не контейнера —
+ * інакше вона зависає над вузькою смужкою наступного слайда.
+ */
+.next {
+  right: calc(var(--peek, 6%) + 16px);
+}
+
+@media (max-width: 640px) {
+  .arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .prev {
+    left: 8px;
+  }
+
+  .next {
+    right: 8px;
+  }
+
+  .track {
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    scroll-behavior: auto;
+  }
+}

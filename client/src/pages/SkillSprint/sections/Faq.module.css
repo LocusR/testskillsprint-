@@ -1,0 +1,7 @@
+.title {
+  margin: clamp(14px, 1.1vw, 21px) 0 clamp(20px, 1.8vw, 35px);
+}
+
+.cta {
+  margin-top: var(--sp-block);
+}

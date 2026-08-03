@@ -1,0 +1,199 @@
+.section {
+  background: var(--c-bg);
+  padding: clamp(30px, 3vw, 56px) 0 clamp(40px, 3vw, 58px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 47%) minmax(0, 53%);
+  gap: 2vw;
+  align-items: start;
+}
+
+.left {
+  min-width: 0;
+}
+
+.kicker {
+  margin-bottom: clamp(14px, 1.2vw, 22px);
+  font-size: var(--fs-hero-kicker);
+  font-weight: 400;
+  color: var(--c-dark);
+}
+
+.title {
+  margin: 0 0 clamp(18px, 1.7vw, 32px);
+  font-size: var(--fs-hero-title);
+  line-height: 1.05;
+  font-weight: 700;
+  color: var(--c-dark);
+}
+
+.titleAccent {
+  white-space: nowrap;
+}
+
+.lead {
+  margin: 0 0 clamp(24px, 2.4vw, 46px);
+  font-size: var(--fs-hero-lead);
+  line-height: 1.35;
+  color: var(--c-dark);
+}
+
+.stats {
+  margin-top: clamp(24px, 2.4vw, 46px);
+  display: grid;
+  grid-template-columns: minmax(0, 38%) minmax(0, 62%);
+  gap: clamp(8px, 0.5vw, 9px);
+}
+
+.numberCard {
+  background: var(--c-white);
+  border-radius: var(--r-xl);
+  padding: clamp(14px, 1.4vw, 26px);
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 0.8vw, 15px);
+}
+
+.number {
+  font-size: var(--fs-hero-number);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--c-dark);
+}
+
+.numberLabel {
+  font-size: clamp(13px, 1.2vw, 21px);
+  line-height: 1.2;
+  color: var(--c-dark);
+}
+
+.featureCard {
+  background: var(--c-white);
+  border-radius: var(--r-xl);
+  padding: clamp(14px, 1.2vw, 23px);
+  display: flex;
+  gap: var(--sp-gap);
+  align-items: flex-start;
+}
+
+.featureCardRaised {
+  box-shadow: var(--shadow-card);
+}
+
+.featureIcon {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-sm);
+  background: var(--c-teal);
+  color: var(--c-white);
+  display: grid;
+  place-items: center;
+}
+
+.featureTitle {
+  font-size: var(--fs-card-title);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--c-dark);
+}
+
+.featureText {
+  margin-top: 8px;
+  font-size: clamp(11px, 0.95vw, 18.2px);
+  line-height: 1.15;
+  color: var(--c-dark);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.heroImgWrap {
+  /* Від'ємний відступ підсовує темну картку під фото — як у прототипі */
+  margin-bottom: clamp(-30px, -2vw, -10px);
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+}
+
+.ctaWrap {
+  width: var(--btn-w);
+}
+
+.darkCard {
+  background: var(--c-dark);
+  border-radius: var(--r-xl);
+  padding: clamp(18px, 1.7vw, 32px) clamp(18px, 1.7vw, 32px) clamp(20px, 1.9vw, 36px);
+}
+
+.darkCardTitle {
+  font-size: var(--fs-lead);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--c-white);
+}
+
+.avatars {
+  width: clamp(110px, 8.4vw, 161px);
+  height: auto;
+  margin: clamp(12px, 1.2vw, 22px) 0;
+}
+
+.darkCardText {
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--c-white);
+}
+
+/* --- Планшет: hero стає одноколонковим, фото йде першим --- */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .right {
+    order: -1;
+  }
+
+  .heroImgWrap {
+    margin-bottom: -16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .stats {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .numberCard {
+    padding: 16px 18px;
+  }
+
+  .titleAccent {
+    white-space: normal;
+  }
+
+  /* vw-складова клампів на телефоні вироджується в мінімум (11–12px) — фіксуємо читабельний розмір */
+  .kicker {
+    font-size: 14px;
+  }
+
+  .numberLabel {
+    font-size: 15px;
+  }
+
+  .featureText {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,20 @@
+.default,
+.wide,
+.hero,
+.article {
+  margin-inline: auto;
+  width: 100%;
+}
+
+.default {
+  max-width: var(--w-container);
+}
+.wide {
+  max-width: var(--w-container-wide);
+}
+.hero {
+  max-width: var(--w-container-hero);
+}
+.article {
+  max-width: var(--w-container-article);
+}

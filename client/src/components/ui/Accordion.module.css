@@ -1,0 +1,75 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  border-bottom: 1px solid var(--c-black);
+}
+
+.heading {
+  margin: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  padding: 26px 10px;
+  background: none;
+  border: none;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  text-align: left;
+  color: var(--c-dark);
+  transition: color var(--transition);
+}
+
+.summary:hover {
+  color: var(--c-teal);
+}
+
+.chevron {
+  display: inline-block;
+  flex-shrink: 0;
+  color: var(--c-black);
+  transition: transform var(--transition);
+}
+
+/* Закрите питання — шеврон вниз; відкрите — вгору (як у прототипі) */
+.closed {
+  transform: rotate(180deg);
+}
+
+.answer {
+  padding: 0 25px 30px;
+  font-size: clamp(13px, 1.19vw, 22.8px);
+  line-height: 1.6;
+  color: var(--c-dark);
+}
+
+.answer[hidden] {
+  display: none;
+}
+
+.answer p + p {
+  margin-top: 0.6em;
+}
+
+@media (max-width: 640px) {
+  .summary {
+    padding: 18px 4px;
+    font-size: 15px;
+    gap: 14px;
+  }
+
+  .answer {
+    padding: 0 4px 22px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}

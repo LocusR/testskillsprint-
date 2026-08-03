@@ -1,0 +1,38 @@
+.pill {
+  display: inline-grid;
+  place-items: center;
+  border-radius: var(--r-pill);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.md {
+  height: clamp(32px, 2.5vw, 49px);
+  padding: 0 clamp(14px, 1.5vw, 29px);
+  font-size: var(--fs-lead);
+}
+
+.lg {
+  height: clamp(30px, 2.5vw, 47px);
+  padding: 0 clamp(14px, 1.5vw, 29px);
+  font-size: clamp(13px, 1.32vw, 25.3px);
+}
+
+.teal {
+  background: var(--c-teal);
+  color: var(--c-white);
+}
+
+.white {
+  background: var(--c-white);
+  color: var(--c-dark);
+}
+
+@media (max-width: 640px) {
+  .md,
+  .lg {
+    height: 34px;
+    padding: 0 16px;
+    font-size: 14px;
+  }
+}

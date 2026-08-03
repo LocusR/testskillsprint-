@@ -1,0 +1,34 @@
+.panel {
+  border-radius: var(--r-section);
+}
+
+.white {
+  background: var(--c-white);
+}
+
+.teal {
+  background: var(--c-teal);
+}
+
+/* Панель на всю ширину — власний контейнер рендериться всередині */
+.bleed {
+  width: 100%;
+  padding: clamp(40px, 4.4vw, 84px) 0;
+}
+
+/* Панель у межах контейнера сторінки */
+.contained {
+  width: var(--w-container);
+  margin: 0 auto var(--sp-section);
+  padding: var(--sp-section-sm) clamp(20px, 2.6vw, 50px);
+}
+
+@media (max-width: 640px) {
+  .contained {
+    padding: 28px 20px;
+  }
+
+  .bleed {
+    padding: 36px 0;
+  }
+}
