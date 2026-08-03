@@ -33,6 +33,24 @@ jobs:
       - name: Встановити залежності
         run: npm ci
 
+      - name: Визначити базовий шлях
+        # Pages віддає сайт із підпапки /<repo>/, тож base мусить її враховувати.
+        # Раніше це була ручна змінна BASE_PATH — і саме про неї легко забути,
+        # а наслідок непомітний: сторінка відкривається, але бандл шукається
+        # у корені домену й віддає 404, тобто білий екран.
+        # Тепер шлях виводиться з назви репозиторію автоматично.
+        # Змінну BASE_PATH лишено як перевизначення: для власного домену
+        # достатньо поставити її в "/".
+        run: |
+          if [ -n "${{ vars.BASE_PATH }}" ]; then
+            echo "BASE_PATH=${{ vars.BASE_PATH }}" >> "$GITHUB_ENV"
+            echo "base з перевизначення: ${{ vars.BASE_PATH }}"
+          else
+            AUTO="/${GITHUB_REPOSITORY#*/}/"
+            echo "BASE_PATH=$AUTO" >> "$GITHUB_ENV"
+            echo "base з назви репозиторію: $AUTO"
+          fi
+
       - name: Зібрати фронтенд
         run: npm run build --workspace client
         env:
@@ -40,9 +58,6 @@ jobs:
           # Задається у Settings -> Secrets and variables -> Actions.
           VITE_RECAPTCHA_SITE_KEY: ${{ secrets.VITE_RECAPTCHA_SITE_KEY }}
           VITE_GA_MEASUREMENT_ID: ${{ vars.VITE_GA_MEASUREMENT_ID }}
-          # Для github.io/<repo>/ треба задати BASE_PATH=/SkillSprint/
-          # (див. vite.config.ts). Для власного домену лишати порожнім.
-          BASE_PATH: ${{ vars.BASE_PATH }}
 
       - name: SPA-fallback
         # GitHub Pages не має rewrite-правил: невідомий шлях віддає 404.html.
